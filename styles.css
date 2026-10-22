@@ -309,6 +309,20 @@ section { padding: 88px 0; }
 }
 
 .course-card h3 { font-size: 1.45rem; }
+
+.badge-closed {
+  color: #ff9d9d;
+  border-color: rgba(255, 157, 157, .45);
+  background: rgba(255, 157, 157, .08);
+}
+
+.btn-disabled,
+.btn-disabled:hover {
+  color: var(--muted);
+  background: rgba(152, 181, 165, .1);
+  border-color: var(--line-strong);
+  cursor: not-allowed;
+}
 .course-card p { color: var(--muted); }
 
 .course-card > .btn {
