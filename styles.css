@@ -616,8 +616,9 @@ ul { list-style: none; }
 .pick[aria-pressed="true"] { background: var(--mint); color: var(--ink); border-color: transparent; }
 
 /* Detalles: franja, cuenta atrás y botón de WhatsApp */
-.pill { flex-wrap: wrap; }
-.pill__count { margin-left: 0.35rem; padding: 0.15rem 0.65rem; border-radius: 999px; background: rgba(34, 197, 139, 0.2); color: var(--mint); font-size: 0.78rem; font-weight: 600; }
+.pill__text { display: inline-flex; align-items: baseline; gap: 0.3rem; }
+.pill__text strong { font-weight: 600; }
+.pill__count { margin-left: 0.35rem; white-space: nowrap; padding: 0.15rem 0.65rem; border-radius: 999px; background: rgba(34, 197, 139, 0.2); color: var(--mint); font-size: 0.78rem; font-weight: 600; }
 .pill__count:empty { display: none; }
 
 .marquee { overflow: hidden; background: var(--emerald); color: var(--ink); border-block: 1px solid rgba(7, 36, 26, 0.15); }
@@ -721,6 +722,19 @@ ul { list-style: none; }
   .contact::after { width: 320px; height: 320px; right: -150px; top: auto; bottom: -150px; margin-top: 0; }
   .facts { grid-template-columns: 1fr; }
   .brand__name { font-size: 1.05rem; }
+}
+
+/* Aviso del próximo curso en móvil: dos líneas y la cuenta atrás a la derecha */
+@media (max-width: 560px) {
+  .pill { display: flex; width: 100%; gap: 0.75rem; padding: 0.7rem 0.9rem; border-radius: 18px; }
+  .pill__dot { flex-shrink: 0; }
+  .pill__text { flex-direction: column; gap: 0; line-height: 1.25; min-width: 0; }
+  .pill__label { font-size: 0.78rem; color: var(--fg-muted); }
+  .pill__text strong { font-size: 1rem; color: #fff; }
+  .pill__count { margin: 0 0 0 auto; padding: 0.3rem 0.7rem; font-size: 0.78rem; }
+}
+@media (max-width: 380px) {
+  .pill__count-pre { display: none; }
 }
 
 /* Respeta a quien prefiere menos movimiento */

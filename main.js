@@ -401,7 +401,7 @@
     const today = new Date();
     today.setHours(0, 0, 0, 0);
     const days = Math.round((start - today) / 86400000);
-    if (days > 1) countdown.textContent = `Faltan ${days} días`;
+    if (days > 1) countdown.innerHTML = `<span class="pill__count-pre">Faltan </span>${days} días`;
     else if (days === 1) countdown.textContent = "Empieza mañana";
     else if (days === 0) countdown.textContent = "Empieza hoy";
     else countdown.remove();
