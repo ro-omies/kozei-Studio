@@ -118,7 +118,7 @@
   $$("[data-split], .reveal, [data-card]").forEach((el) => revealObserver.observe(el));
 
   // Tarjetas: entrada escalonada dentro de cada grupo
-  $$(".courses, .features, .services, .plans__grid, .projects").forEach((group) => {
+  $$(".courses, .features, .services, .plans__grid, .perks").forEach((group) => {
     $$("[data-card]", group).forEach((card, i) => card.style.setProperty("--d", `${i * 0.12}s`));
   });
 
