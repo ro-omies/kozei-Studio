@@ -1,640 +1,1140 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Kozei STUDIO | Diseño gráfico, desarrollo web y cursos</title>
-  <meta name="description" content="Kozei STUDIO es un estudio de diseño gráfico y desarrollo web. Creamos tu marca y tu web, o te enseñamos a hacerlo con nuestros cursos." />
-  <meta name="theme-color" content="#05140e" />
-  <link rel="icon" href="img/favicon.ico" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kozei STUDIO | Diseño gráfico, desarrollo web y cursos</title>
+    <meta
+      name="description"
+      content="Kozei STUDIO es un estudio de diseño gráfico y desarrollo web. Creamos tu marca y tu web, o te enseñamos a hacerlo con nuestros cursos."
+    />
+    <meta name="theme-color" content="#05140e" />
+    <link rel="icon" href="img/favicon.ico" />
 
-  <!-- Tipografías -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+    <!-- Tipografías -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&family=Instrument+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
 
-  <link rel="stylesheet" href="styles.css" />
-  <script src="main.js" defer></script>
-</head>
-<body>
-  <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
-  <a class="skip-link" href="#cursos">Saltar al contenido</a>
-
-  <!-- Recorrido de la página -->
-  <nav class="rail" id="rail" aria-label="Recorrido de la página">
-    <a href="#inicio" data-target="inicio" data-label="Inicio" aria-label="Inicio"></a>
-    <a href="#estudio" data-target="estudio" data-label="El estudio" aria-label="El estudio"></a>
-    <a href="#servicios" data-target="servicios" data-label="Servicios" aria-label="Servicios"></a>
-    <a href="#proceso" data-target="proceso" data-label="Proceso" aria-label="Proceso"></a>
-    <a href="#cursos" data-target="cursos" data-label="Cursos" aria-label="Cursos"></a>
-    <a href="#ventajas" data-target="ventajas" data-label="Por qué elegirnos" aria-label="Por qué elegirnos"></a>
-    <a href="#faq" data-target="faq" data-label="Preguntas" aria-label="Preguntas frecuentes"></a>
-    <a href="#contacto" data-target="contacto" data-label="Contacto" aria-label="Contacto"></a>
-  </nav>
-
-  <!-- ================= ENCABEZADO ================= -->
-  <header class="header" id="header">
-    <div class="container header__inner">
-      <a href="#inicio" class="brand" aria-label="Kozei STUDIO, ir al inicio">
-        <span class="brand__mark"><img src="img/logo.png" alt="" width="40" height="40" /></span>
-        <span class="brand__name">Kozei <span>STUDIO</span></span>
-      </a>
-
-      <nav class="nav" id="nav" aria-label="Principal">
-        <a href="#servicios" class="nav__link" data-section="estudio servicios">Servicios</a>
-        <a href="#proceso" class="nav__link" data-section="proceso">Proceso</a>
-        <a href="#cursos" class="nav__link" data-section="cursos">Cursos</a>
-        <a href="#ventajas" class="nav__link" data-section="ventajas">Por qué elegirnos</a>
-        <a href="#contacto" class="nav__link" data-section="faq contacto">Contacto</a>
-      </nav>
-
-      <a class="btn btn--primary btn--sm header__cta" data-wa="Hola, quiero más información sobre los cursos de Kozei STUDIO." href="#contacto" target="_blank" rel="noopener">
-        <span>Escríbenos</span>
-      </a>
-
-      <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="nav" aria-label="Abrir menú">
-        <span></span><span></span>
-      </button>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="main.js" defer></script>
+    <script>
+      window.va =
+        window.va ||
+        function () {
+          (window.vaq = window.vaq || []).push(arguments);
+        };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
+  </head>
+  <body>
+    <div class="progress" aria-hidden="true">
+      <span id="progressBar"></span>
     </div>
-  </header>
+    <a class="skip-link" href="#cursos">Saltar al contenido</a>
 
-  <main>
-    <!-- ================= INICIO ================= -->
-    <section class="hero" id="inicio">
-      <div class="hero__bg" aria-hidden="true">
-        <span class="hero__grid"></span>
-        <span class="glow glow--a"></span>
-        <span class="glow glow--b"></span>
-        <span class="hero__spot"></span>
-        <span class="noise"></span>
+    <!-- Recorrido de la página -->
+    <nav class="rail" id="rail" aria-label="Recorrido de la página">
+      <a
+        href="#inicio"
+        data-target="inicio"
+        data-label="Inicio"
+        aria-label="Inicio"
+      ></a>
+      <a
+        href="#estudio"
+        data-target="estudio"
+        data-label="El estudio"
+        aria-label="El estudio"
+      ></a>
+      <a
+        href="#servicios"
+        data-target="servicios"
+        data-label="Servicios"
+        aria-label="Servicios"
+      ></a>
+      <a
+        href="#proceso"
+        data-target="proceso"
+        data-label="Proceso"
+        aria-label="Proceso"
+      ></a>
+      <a
+        href="#cursos"
+        data-target="cursos"
+        data-label="Cursos"
+        aria-label="Cursos"
+      ></a>
+      <a
+        href="#ventajas"
+        data-target="ventajas"
+        data-label="Por qué elegirnos"
+        aria-label="Por qué elegirnos"
+      ></a>
+      <a
+        href="#faq"
+        data-target="faq"
+        data-label="Preguntas"
+        aria-label="Preguntas frecuentes"
+      ></a>
+      <a
+        href="#contacto"
+        data-target="contacto"
+        data-label="Contacto"
+        aria-label="Contacto"
+      ></a>
+    </nav>
+
+    <!-- ================= ENCABEZADO ================= -->
+    <header class="header" id="header">
+      <div class="container header__inner">
+        <a href="#inicio" class="brand" aria-label="Kozei STUDIO, ir al inicio">
+          <span class="brand__mark"
+            ><img src="img/logo.png" alt="" width="40" height="40"
+          /></span>
+          <span class="brand__name">Kozei <span>STUDIO</span></span>
+        </a>
+
+        <nav class="nav" id="nav" aria-label="Principal">
+          <a
+            href="#servicios"
+            class="nav__link"
+            data-section="estudio servicios"
+            >Servicios</a
+          >
+          <a href="#proceso" class="nav__link" data-section="proceso"
+            >Proceso</a
+          >
+          <a href="#cursos" class="nav__link" data-section="cursos">Cursos</a>
+          <a href="#ventajas" class="nav__link" data-section="ventajas"
+            >Por qué elegirnos</a
+          >
+          <a href="#contacto" class="nav__link" data-section="faq contacto"
+            >Contacto</a
+          >
+        </nav>
+
+        <a
+          class="btn btn--primary btn--sm header__cta"
+          data-wa="Hola, quiero más información sobre los cursos de Kozei STUDIO."
+          href="#contacto"
+          target="_blank"
+          rel="noopener"
+        >
+          <span>Escríbenos</span>
+        </a>
+
+        <button
+          class="menu-toggle"
+          id="menuToggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="nav"
+          aria-label="Abrir menú"
+        >
+          <span></span><span></span>
+        </button>
       </div>
+    </header>
 
-      <div class="container hero__inner">
-        <!-- Texto -->
-        <div class="hero__copy">
-          <a class="pill reveal" href="#cursos">
-            <span class="pill__dot" aria-hidden="true"></span>
-            <span class="pill__text"><span class="pill__label">Próximo curso:</span> <strong>20 de noviembre</strong></span>
-            <span class="pill__count" id="countdown"></span>
-          </a>
-
-          <h1 class="hero__title" data-split>
-            Creamos tu marca y tu web. <span class="muted">O te enseñamos a crearlas tú.</span>
-          </h1>
-
-          <p class="hero__lead reveal" style="--d: 0.45s">
-            Kozei STUDIO es un estudio de diseño gráfico y desarrollo web.
-            Elige tu camino: encárganos el trabajo o aprende con nuestros cursos.
-          </p>
-
-          <div class="hero__actions reveal" style="--d: 0.6s">
-            <a href="#servicios" class="btn btn--primary btn--magnetic">
-              <span>Quiero mi web</span>
-              <span class="btn__icon" data-icon="arrow"></span>
-            </a>
-            <a class="btn btn--ghost" href="#cursos">
-              <span class="icon" data-icon="book"></span>
-              <span>Quiero aprender</span>
-            </a>
-          </div>
-
-          <ul class="hero__points reveal" style="--d: 0.75s">
-            <li><span class="icon" data-icon="check"></span>Diseño gráfico y desarrollo web</li>
-            <li><span class="icon" data-icon="check"></span>Cursos online</li>
-            <li><span class="icon" data-icon="check"></span>Acompañamiento por WhatsApp</li>
-          </ul>
+    <main>
+      <!-- ================= INICIO ================= -->
+      <section class="hero" id="inicio">
+        <div class="hero__bg" aria-hidden="true">
+          <span class="hero__grid"></span>
+          <span class="glow glow--a"></span>
+          <span class="glow glow--b"></span>
+          <span class="hero__spot"></span>
+          <span class="noise"></span>
         </div>
 
-        <!-- Maqueta interactiva -->
-        <div class="hero__visual">
-          <div class="stage" id="stage">
-            <!-- Ventana de navegador que se "construye" sola -->
-            <div class="layer layer--window" style="--depth: 14">
-              <div class="window" id="mock" aria-hidden="true">
-                <div class="window__bar">
-                  <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-                  <span class="window__url">tumarca.netlify.app</span>
-                </div>
-                <div class="window__body">
-                  <div class="site">
-                    <div class="site__nav b" style="--n: 1">
-                      <span class="site__logo"></span>
-                      <span class="site__links"><i></i><i></i><i></i></span>
-                    </div>
-                    <div class="site__hero">
-                      <div class="site__text">
-                        <i class="line line--lg b" style="--n: 2"></i>
-                        <i class="line line--lg line--s b" style="--n: 3"></i>
-                        <i class="line b" style="--n: 4"></i>
-                        <i class="line line--s b" style="--n: 5"></i>
-                        <span class="site__btn b" style="--n: 6"></span>
-                      </div>
-                      <div class="site__img b" style="--n: 7"></div>
-                    </div>
-                    <div class="site__cards">
-                      <i class="b" style="--n: 8"></i>
-                      <i class="b" style="--n: 9"></i>
-                      <i class="b" style="--n: 10"></i>
-                    </div>
+        <div class="container hero__inner">
+          <!-- Texto -->
+          <div class="hero__copy">
+            <a class="pill reveal" href="#cursos">
+              <span class="pill__dot" aria-hidden="true"></span>
+              <span class="pill__text"
+                ><span class="pill__label">Próximo curso:</span>
+                <strong>20 de noviembre</strong></span
+              >
+              <span class="pill__count" id="countdown"></span>
+            </a>
+
+            <h1 class="hero__title" data-split>
+              Creamos tu marca y tu web.
+              <span class="muted">O te enseñamos a crearlas tú.</span>
+            </h1>
+
+            <p class="hero__lead reveal" style="--d: 0.45s">
+              Kozei STUDIO es un estudio de diseño gráfico y desarrollo web.
+              Elige tu camino: encárganos el trabajo o aprende con nuestros
+              cursos.
+            </p>
+
+            <div class="hero__actions reveal" style="--d: 0.6s">
+              <a href="#servicios" class="btn btn--primary btn--magnetic">
+                <span>Quiero mi web</span>
+                <span class="btn__icon" data-icon="arrow"></span>
+              </a>
+              <a class="btn btn--ghost" href="#cursos">
+                <span class="icon" data-icon="book"></span>
+                <span>Quiero aprender</span>
+              </a>
+            </div>
+
+            <ul class="hero__points reveal" style="--d: 0.75s">
+              <li>
+                <span class="icon" data-icon="check"></span>Diseño gráfico y
+                desarrollo web
+              </li>
+              <li><span class="icon" data-icon="check"></span>Cursos online</li>
+              <li>
+                <span class="icon" data-icon="check"></span>Acompañamiento por
+                WhatsApp
+              </li>
+            </ul>
+          </div>
+
+          <!-- Maqueta interactiva -->
+          <div class="hero__visual">
+            <div class="stage" id="stage">
+              <!-- Ventana de navegador que se "construye" sola -->
+              <div class="layer layer--window" style="--depth: 14">
+                <div class="window" id="mock" aria-hidden="true">
+                  <div class="window__bar">
+                    <span class="dot"></span><span class="dot"></span
+                    ><span class="dot"></span>
+                    <span class="window__url">tumarca.netlify.app</span>
                   </div>
-                  <svg class="cursor" viewBox="0 0 24 24" width="22" height="22"><path d="M5 3l14 8-6 2-2 6z" fill="#07241a" stroke="#fff" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                  <div class="window__body">
+                    <div class="site">
+                      <div class="site__nav b" style="--n: 1">
+                        <span class="site__logo"></span>
+                        <span class="site__links"><i></i><i></i><i></i></span>
+                      </div>
+                      <div class="site__hero">
+                        <div class="site__text">
+                          <i class="line line--lg b" style="--n: 2"></i>
+                          <i class="line line--lg line--s b" style="--n: 3"></i>
+                          <i class="line b" style="--n: 4"></i>
+                          <i class="line line--s b" style="--n: 5"></i>
+                          <span class="site__btn b" style="--n: 6"></span>
+                        </div>
+                        <div class="site__img b" style="--n: 7"></div>
+                      </div>
+                      <div class="site__cards">
+                        <i class="b" style="--n: 8"></i>
+                        <i class="b" style="--n: 9"></i>
+                        <i class="b" style="--n: 10"></i>
+                      </div>
+                    </div>
+                    <svg
+                      class="cursor"
+                      viewBox="0 0 24 24"
+                      width="22"
+                      height="22"
+                    >
+                      <path
+                        d="M5 3l14 8-6 2-2 6z"
+                        fill="#07241a"
+                        stroke="#fff"
+                        stroke-width="1.5"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <!-- Paleta: cambia el color de la marca -->
-            <div class="layer layer--palette" style="--depth: 34">
-              <div class="chip chip--float-a">
-                <p class="chip__label">Identidad visual</p>
-                <div class="swatches" role="group" aria-label="Elegir color de marca">
-                  <button class="swatch is-active" type="button" style="--c: #22c58b" data-brand="#22c58b" data-brand-2="#b9f3d4" aria-label="Verde" aria-pressed="true"></button>
-                  <button class="swatch" type="button" style="--c: #4f8cff" data-brand="#4f8cff" data-brand-2="#cfe0ff" aria-label="Azul" aria-pressed="false"></button>
-                  <button class="swatch" type="button" style="--c: #ff5c8a" data-brand="#ff5c8a" data-brand-2="#ffd3e0" aria-label="Rosa" aria-pressed="false"></button>
-                  <button class="swatch" type="button" style="--c: #f5b83d" data-brand="#f5b83d" data-brand-2="#fde9b8" aria-label="Ámbar" aria-pressed="false"></button>
+              <!-- Paleta: cambia el color de la marca -->
+              <div class="layer layer--palette" style="--depth: 34">
+                <div class="chip chip--float-a">
+                  <p class="chip__label">Identidad visual</p>
+                  <div
+                    class="swatches"
+                    role="group"
+                    aria-label="Elegir color de marca"
+                  >
+                    <button
+                      class="swatch is-active"
+                      type="button"
+                      style="--c: #22c58b"
+                      data-brand="#22c58b"
+                      data-brand-2="#b9f3d4"
+                      aria-label="Verde"
+                      aria-pressed="true"
+                    ></button>
+                    <button
+                      class="swatch"
+                      type="button"
+                      style="--c: #4f8cff"
+                      data-brand="#4f8cff"
+                      data-brand-2="#cfe0ff"
+                      aria-label="Azul"
+                      aria-pressed="false"
+                    ></button>
+                    <button
+                      class="swatch"
+                      type="button"
+                      style="--c: #ff5c8a"
+                      data-brand="#ff5c8a"
+                      data-brand-2="#ffd3e0"
+                      aria-label="Rosa"
+                      aria-pressed="false"
+                    ></button>
+                    <button
+                      class="swatch"
+                      type="button"
+                      style="--c: #f5b83d"
+                      data-brand="#f5b83d"
+                      data-brand-2="#fde9b8"
+                      aria-label="Ámbar"
+                      aria-pressed="false"
+                    ></button>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <!-- Tipografía -->
-            <div class="layer layer--type" style="--depth: 46" aria-hidden="true">
-              <div class="chip chip--float-b">
-                <p class="chip__label">Tipografía</p>
-                <p class="chip__aa">Aa</p>
+              <!-- Tipografía -->
+              <div
+                class="layer layer--type"
+                style="--depth: 46"
+                aria-hidden="true"
+              >
+                <div class="chip chip--float-b">
+                  <p class="chip__label">Tipografía</p>
+                  <p class="chip__aa">Aa</p>
+                </div>
               </div>
-            </div>
 
-            <!-- Código que se escribe -->
-            <div class="layer layer--code" style="--depth: 26" aria-hidden="true">
-              <div class="chip chip--float-c">
-                <p class="chip__label">Código</p>
-                <pre class="code" id="code"></pre>
+              <!-- Código que se escribe -->
+              <div
+                class="layer layer--code"
+                style="--depth: 26"
+                aria-hidden="true"
+              >
+                <div class="chip chip--float-c">
+                  <p class="chip__label">Código</p>
+                  <pre class="code" id="code"></pre>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Franja en movimiento -->
-    <div class="marquee" aria-hidden="true">
-      <div class="marquee__track">
-        <div class="marquee__group"><span>Diseño gráfico</span><span>Desarrollo web</span><span>Identidad visual</span><span>Tiendas online</span><span>Webs informativas</span><span>Cursos online</span></div>
-        <div class="marquee__group"><span>Diseño gráfico</span><span>Desarrollo web</span><span>Identidad visual</span><span>Tiendas online</span><span>Webs informativas</span><span>Cursos online</span></div>
-      </div>
-    </div>
-
-    <!-- ================= EL ESTUDIO ================= -->
-    <section class="section section--light" id="estudio">
-      <div class="container">
-        <div class="section__head">
-          <h2 class="section__title" data-split>Un estudio que lleva tu idea de la marca a la web.</h2>
-          <p class="about__text" id="scrollText">
-            Kozei STUDIO nace en Cuba como un estudio de diseño gráfico y
-            desarrollo web. Compartimos lo que hacemos cada día en cursos claros,
-            para que tu marca y tu web salgan adelante sin complicaciones.
-          </p>
+      <!-- Franja en movimiento -->
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee__track">
+          <div class="marquee__group">
+            <span>Diseño gráfico</span><span>Desarrollo web</span
+            ><span>Identidad visual</span><span>Tiendas online</span
+            ><span>Webs informativas</span><span>Cursos online</span>
+          </div>
+          <div class="marquee__group">
+            <span>Diseño gráfico</span><span>Desarrollo web</span
+            ><span>Identidad visual</span><span>Tiendas online</span
+            ><span>Webs informativas</span><span>Cursos online</span>
+          </div>
         </div>
+      </div>
 
-        <div class="duo">
-          <div class="focus-list">
-            <article class="focus reveal">
-              <div class="focus__head">
-                <span class="focus__icon" data-icon="pen"></span>
-                <h3>Diseño gráfico</h3>
-              </div>
-              <div class="focus__body">
-                <p>Identidades visuales y piezas gráficas que hacen que tu marca se reconozca y se recuerde.</p>
-                <ul class="focus__tags">
-                  <li>Logo</li><li>Paleta de color</li><li>Tipografía</li><li>Piezas para redes</li>
-                </ul>
-              </div>
+      <!-- ================= EL ESTUDIO ================= -->
+      <section class="section section--light" id="estudio">
+        <div class="container">
+          <div class="section__head">
+            <h2 class="section__title" data-split>
+              Un estudio que lleva tu idea de la marca a la web.
+            </h2>
+            <p class="about__text" id="scrollText">
+              Kozei STUDIO nace en Cuba como un estudio de diseño gráfico y
+              desarrollo web. Compartimos lo que hacemos cada día en cursos
+              claros, para que tu marca y tu web salgan adelante sin
+              complicaciones.
+            </p>
+          </div>
+
+          <div class="duo">
+            <div class="focus-list">
+              <article class="focus reveal">
+                <div class="focus__head">
+                  <span class="focus__icon" data-icon="pen"></span>
+                  <h3>Diseño gráfico</h3>
+                </div>
+                <div class="focus__body">
+                  <p>
+                    Identidades visuales y piezas gráficas que hacen que tu
+                    marca se reconozca y se recuerde.
+                  </p>
+                  <ul class="focus__tags">
+                    <li>Logo</li>
+                    <li>Paleta de color</li>
+                    <li>Tipografía</li>
+                    <li>Piezas para redes</li>
+                  </ul>
+                </div>
+              </article>
+
+              <article class="focus reveal" style="--d: 0.12s">
+                <div class="focus__head">
+                  <span class="focus__icon" data-icon="code"></span>
+                  <h3>Desarrollo web</h3>
+                </div>
+                <div class="focus__body">
+                  <p>
+                    Sitios web y tiendas online que presentan tu negocio con
+                    claridad y funcionan en cualquier pantalla.
+                  </p>
+                  <ul class="focus__tags">
+                    <li>Web informativa</li>
+                    <li>Tienda online</li>
+                    <li>Web a medida</li>
+                  </ul>
+                </div>
+              </article>
+            </div>
+
+            <ol class="path reveal" aria-label="De la idea a la web">
+              <li style="--i: 0">
+                <span class="path__dot">1</span>
+                <div>
+                  <strong>Tu idea</strong>
+                  <p>Nos cuentas qué quieres lograr.</p>
+                </div>
+              </li>
+              <li style="--i: 1">
+                <span class="path__dot">2</span>
+                <div>
+                  <strong>Tu marca</strong>
+                  <p>Le damos una identidad visual propia.</p>
+                </div>
+              </li>
+              <li style="--i: 2">
+                <span class="path__dot">3</span>
+                <div>
+                  <strong>Tu web</strong>
+                  <p>La llevamos a internet para que te encuentren.</p>
+                </div>
+              </li>
+            </ol>
+          </div>
+
+          <a class="next" href="#servicios">
+            <span>Siguiente: servicios</span>
+            <span class="next__icon" data-icon="arrow"></span>
+          </a>
+        </div>
+      </section>
+
+      <!-- ================= SERVICIOS ================= -->
+      <section class="section section--dark" id="servicios">
+        <div class="container">
+          <div class="section__head">
+            <h2 class="section__title" data-split>
+              Servicios para que tu negocio tenga presencia en internet.
+            </h2>
+            <p class="section__lead reveal">
+              Elige lo que necesitas hoy. Te cotizamos según tu proyecto por
+              WhatsApp.
+            </p>
+          </div>
+
+          <div class="services">
+            <article class="card service" data-card>
+              <span class="service__icon" data-icon="globe"></span>
+              <h3>Web informativa</h3>
+              <p>
+                Para negocios que quieren presentarse con claridad y ser fáciles
+                de contactar.
+              </p>
+              <ul class="ticks">
+                <li>
+                  <span class="icon" data-icon="check"></span>Quién eres y qué
+                  ofreces
+                </li>
+                <li>
+                  <span class="icon" data-icon="check"></span>Diseño adaptado a
+                  tu marca
+                </li>
+                <li>
+                  <span class="icon" data-icon="check"></span>Botón directo a
+                  WhatsApp
+                </li>
+              </ul>
+              <a
+                class="btn btn--outline"
+                data-wa="Hola, quiero cotizar una web informativa para mi negocio."
+                href="#contacto"
+                target="_blank"
+                rel="noopener"
+                >Cotizar por WhatsApp</a
+              >
             </article>
 
-            <article class="focus reveal" style="--d: 0.12s">
-              <div class="focus__head">
-                <span class="focus__icon" data-icon="code"></span>
-                <h3>Desarrollo web</h3>
-              </div>
-              <div class="focus__body">
-                <p>Sitios web y tiendas online que presentan tu negocio con claridad y funcionan en cualquier pantalla.</p>
-                <ul class="focus__tags">
-                  <li>Web informativa</li><li>Tienda online</li><li>Web a medida</li>
-                </ul>
-              </div>
+            <article class="card service" data-card>
+              <span class="service__icon" data-icon="store"></span>
+              <h3>Tienda online</h3>
+              <p>
+                Para vender tus productos por internet y gestionar tu negocio
+                desde un panel.
+              </p>
+              <ul class="ticks">
+                <li>
+                  <span class="icon" data-icon="check"></span>Catálogo y carrito
+                  de compras
+                </li>
+                <li>
+                  <span class="icon" data-icon="check"></span>Inventario y panel
+                  administrativo
+                </li>
+                <li>
+                  <span class="icon" data-icon="check"></span>Tres paquetes
+                  según lo que necesites
+                </li>
+              </ul>
+              <a class="btn btn--outline" href="#planes">Ver paquetes</a>
+            </article>
+
+            <article class="card service" data-card>
+              <span class="service__icon" data-icon="sliders"></span>
+              <h3>Web a medida</h3>
+              <p>
+                Para proyectos con necesidades propias que no encajan en una
+                plantilla.
+              </p>
+              <ul class="ticks">
+                <li>
+                  <span class="icon" data-icon="check"></span>Funciones según tu
+                  idea
+                </li>
+                <li>
+                  <span class="icon" data-icon="check"></span>Diseño totalmente
+                  personalizado
+                </li>
+                <li>
+                  <span class="icon" data-icon="check"></span>Cotización según
+                  el alcance
+                </li>
+              </ul>
+              <a
+                class="btn btn--outline"
+                data-wa="Hola, quiero cotizar una web a medida."
+                href="#contacto"
+                target="_blank"
+                rel="noopener"
+                >Cotizar por WhatsApp</a
+              >
             </article>
           </div>
 
-          <ol class="path reveal" aria-label="De la idea a la web">
-            <li style="--i: 0"><span class="path__dot">1</span><div><strong>Tu idea</strong><p>Nos cuentas qué quieres lograr.</p></div></li>
-            <li style="--i: 1"><span class="path__dot">2</span><div><strong>Tu marca</strong><p>Le damos una identidad visual propia.</p></div></li>
-            <li style="--i: 2"><span class="path__dot">3</span><div><strong>Tu web</strong><p>La llevamos a internet para que te encuentren.</p></div></li>
+          <div class="plans" id="planes">
+            <div class="plans__head">
+              <h3>Paquetes de tienda online</h3>
+              <p>
+                Elige el paquete que mejor se ajuste a tu negocio. Precios en
+                USD.
+              </p>
+            </div>
+
+            <div class="plans__grid">
+              <article class="card plan" data-card>
+                <span class="plan__level">Para empezar a vender</span>
+                <h4>Paquete básico</h4>
+                <p class="plan__price">
+                  <strong>1,500</strong><span>USD</span>
+                </p>
+                <ul class="ticks">
+                  <li>
+                    <span class="icon" data-icon="check"></span>Catálogo de
+                    productos
+                  </li>
+                  <li>
+                    <span class="icon" data-icon="check"></span>Carrito de
+                    compras
+                  </li>
+                  <li>
+                    <span class="icon" data-icon="check"></span>Inventario
+                    básico
+                  </li>
+                  <li>
+                    <span class="icon" data-icon="check"></span>Panel
+                    administrativo
+                  </li>
+                </ul>
+                <a
+                  class="btn btn--outline"
+                  data-wa="Hola, me interesa el paquete básico de tienda online."
+                  href="#contacto"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar por WhatsApp</a
+                >
+              </article>
+
+              <article class="card plan" data-card>
+                <span class="plan__level">Para gestionar tu negocio</span>
+                <h4>Paquete pro</h4>
+                <p class="plan__price">
+                  <strong>2,000</strong><span>USD</span>
+                </p>
+                <ul class="ticks">
+                  <li>
+                    <span class="icon" data-icon="check"></span>Todo lo del
+                    paquete básico
+                  </li>
+                  <li>
+                    <span class="icon" data-icon="check"></span>Facturación
+                  </li>
+                  <li><span class="icon" data-icon="check"></span>Entregas</li>
+                  <li>
+                    <span class="icon" data-icon="check"></span>Diseño web
+                    personalizado
+                  </li>
+                </ul>
+                <a
+                  class="btn btn--outline"
+                  data-wa="Hola, me interesa el paquete pro de tienda online."
+                  href="#contacto"
+                  target="_blank"
+                  rel="noopener"
+                  >Consultar por WhatsApp</a
+                >
+              </article>
+
+              <article class="card plan plan--top" data-card>
+                <span class="plan__level">Solución completa</span>
+                <h4>Paquete premium</h4>
+                <p class="plan__price">
+                  <strong>2,500</strong><span>USD</span>
+                </p>
+                <ul class="ticks">
+                  <li>
+                    <span class="icon" data-icon="check"></span>Todo lo de los
+                    paquetes anteriores
+                  </li>
+                  <li>
+                    <span class="icon" data-icon="check"></span>Seguridad
+                    avanzada
+                  </li>
+                  <li>
+                    <span class="icon" data-icon="check"></span>Hosting
+                    configurado
+                  </li>
+                  <li>
+                    <span class="icon" data-icon="check"></span>Capacitación
+                    integral
+                  </li>
+                </ul>
+                <a
+                  class="btn btn--primary btn--sm"
+                  data-wa="Hola, me interesa el paquete premium de tienda online."
+                  href="#contacto"
+                  target="_blank"
+                  rel="noopener"
+                  ><span>Consultar por WhatsApp</span></a
+                >
+              </article>
+            </div>
+          </div>
+
+          <a class="next" href="#proceso">
+            <span>Siguiente: cómo trabajamos</span>
+            <span class="next__icon" data-icon="arrow"></span>
+          </a>
+        </div>
+      </section>
+
+      <!-- ================= PROCESO ================= -->
+      <section class="section section--light" id="proceso">
+        <div class="container">
+          <div class="section__head">
+            <h2 class="section__title" data-split>
+              Así trabajamos contigo, paso a paso.
+            </h2>
+            <p class="section__lead reveal">
+              Un proceso claro desde el primer mensaje hasta la entrega.
+            </p>
+          </div>
+
+          <ol class="steps" id="steps">
+            <li class="step">
+              <span class="step__num">1</span>
+              <div>
+                <h3>Hablamos por WhatsApp</h3>
+                <p>Nos cuentas tu idea y lo que necesitas.</p>
+              </div>
+            </li>
+            <li class="step">
+              <span class="step__num">2</span>
+              <div>
+                <h3>Recibes una propuesta</h3>
+                <p>Te enviamos el alcance y el precio para que decidas.</p>
+              </div>
+            </li>
+            <li class="step">
+              <span class="step__num">3</span>
+              <div>
+                <h3>Diseñamos y desarrollamos</h3>
+                <p>Damos forma a tu marca y a tu web.</p>
+              </div>
+            </li>
+            <li class="step">
+              <span class="step__num">4</span>
+              <div>
+                <h3>Entregamos y te acompañamos</h3>
+                <p>Publicamos tu proyecto y resolvemos tus dudas.</p>
+              </div>
+            </li>
           </ol>
-        </div>
 
-        <a class="next" href="#servicios">
-          <span>Siguiente: servicios</span>
-          <span class="next__icon" data-icon="arrow"></span>
-        </a>
-      </div>
-    </section>
-
-    <!-- ================= SERVICIOS ================= -->
-    <section class="section section--dark" id="servicios">
-      <div class="container">
-        <div class="section__head">
-          <h2 class="section__title" data-split>Servicios para que tu negocio tenga presencia en internet.</h2>
-          <p class="section__lead reveal">Elige lo que necesitas hoy. Te cotizamos según tu proyecto por WhatsApp.</p>
-        </div>
-
-        <div class="services">
-          <article class="card service" data-card>
-            <span class="service__icon" data-icon="globe"></span>
-            <h3>Web informativa</h3>
-            <p>Para negocios que quieren presentarse con claridad y ser fáciles de contactar.</p>
-            <ul class="ticks">
-              <li><span class="icon" data-icon="check"></span>Quién eres y qué ofreces</li>
-              <li><span class="icon" data-icon="check"></span>Diseño adaptado a tu marca</li>
-              <li><span class="icon" data-icon="check"></span>Botón directo a WhatsApp</li>
-            </ul>
-            <a class="btn btn--outline" data-wa="Hola, quiero cotizar una web informativa para mi negocio." href="#contacto" target="_blank" rel="noopener">Cotizar por WhatsApp</a>
-          </article>
-
-          <article class="card service" data-card>
-            <span class="service__icon" data-icon="store"></span>
-            <h3>Tienda online</h3>
-            <p>Para vender tus productos por internet y gestionar tu negocio desde un panel.</p>
-            <ul class="ticks">
-              <li><span class="icon" data-icon="check"></span>Catálogo y carrito de compras</li>
-              <li><span class="icon" data-icon="check"></span>Inventario y panel administrativo</li>
-              <li><span class="icon" data-icon="check"></span>Tres paquetes según lo que necesites</li>
-            </ul>
-            <a class="btn btn--outline" href="#planes">Ver paquetes</a>
-          </article>
-
-          <article class="card service" data-card>
-            <span class="service__icon" data-icon="sliders"></span>
-            <h3>Web a medida</h3>
-            <p>Para proyectos con necesidades propias que no encajan en una plantilla.</p>
-            <ul class="ticks">
-              <li><span class="icon" data-icon="check"></span>Funciones según tu idea</li>
-              <li><span class="icon" data-icon="check"></span>Diseño totalmente personalizado</li>
-              <li><span class="icon" data-icon="check"></span>Cotización según el alcance</li>
-            </ul>
-            <a class="btn btn--outline" data-wa="Hola, quiero cotizar una web a medida." href="#contacto" target="_blank" rel="noopener">Cotizar por WhatsApp</a>
-          </article>
-        </div>
-
-        <div class="plans" id="planes">
-          <div class="plans__head">
-            <h3>Paquetes de tienda online</h3>
-            <p>Elige el paquete que mejor se ajuste a tu negocio. Precios en USD.</p>
-          </div>
-
-          <div class="plans__grid">
-            <article class="card plan" data-card>
-              <span class="plan__level">Para empezar a vender</span>
-              <h4>Paquete básico</h4>
-              <p class="plan__price"><strong>1,500</strong><span>USD</span></p>
-              <ul class="ticks">
-                <li><span class="icon" data-icon="check"></span>Catálogo de productos</li>
-                <li><span class="icon" data-icon="check"></span>Carrito de compras</li>
-                <li><span class="icon" data-icon="check"></span>Inventario básico</li>
-                <li><span class="icon" data-icon="check"></span>Panel administrativo</li>
-              </ul>
-              <a class="btn btn--outline" data-wa="Hola, me interesa el paquete básico de tienda online." href="#contacto" target="_blank" rel="noopener">Consultar por WhatsApp</a>
-            </article>
-
-            <article class="card plan" data-card>
-              <span class="plan__level">Para gestionar tu negocio</span>
-              <h4>Paquete pro</h4>
-              <p class="plan__price"><strong>2,000</strong><span>USD</span></p>
-              <ul class="ticks">
-                <li><span class="icon" data-icon="check"></span>Todo lo del paquete básico</li>
-                <li><span class="icon" data-icon="check"></span>Facturación</li>
-                <li><span class="icon" data-icon="check"></span>Entregas</li>
-                <li><span class="icon" data-icon="check"></span>Diseño web personalizado</li>
-              </ul>
-              <a class="btn btn--outline" data-wa="Hola, me interesa el paquete pro de tienda online." href="#contacto" target="_blank" rel="noopener">Consultar por WhatsApp</a>
-            </article>
-
-            <article class="card plan plan--top" data-card>
-              <span class="plan__level">Solución completa</span>
-              <h4>Paquete premium</h4>
-              <p class="plan__price"><strong>2,500</strong><span>USD</span></p>
-              <ul class="ticks">
-                <li><span class="icon" data-icon="check"></span>Todo lo de los paquetes anteriores</li>
-                <li><span class="icon" data-icon="check"></span>Seguridad avanzada</li>
-                <li><span class="icon" data-icon="check"></span>Hosting configurado</li>
-                <li><span class="icon" data-icon="check"></span>Capacitación integral</li>
-              </ul>
-              <a class="btn btn--primary btn--sm" data-wa="Hola, me interesa el paquete premium de tienda online." href="#contacto" target="_blank" rel="noopener"><span>Consultar por WhatsApp</span></a>
-            </article>
-          </div>
-        </div>
-
-        <a class="next" href="#proceso">
-          <span>Siguiente: cómo trabajamos</span>
-          <span class="next__icon" data-icon="arrow"></span>
-        </a>
-      </div>
-    </section>
-
-    <!-- ================= PROCESO ================= -->
-    <section class="section section--light" id="proceso">
-      <div class="container">
-        <div class="section__head">
-          <h2 class="section__title" data-split>Así trabajamos contigo, paso a paso.</h2>
-          <p class="section__lead reveal">Un proceso claro desde el primer mensaje hasta la entrega.</p>
-        </div>
-
-        <ol class="steps" id="steps">
-          <li class="step">
-            <span class="step__num">1</span>
-            <div><h3>Hablamos por WhatsApp</h3><p>Nos cuentas tu idea y lo que necesitas.</p></div>
-          </li>
-          <li class="step">
-            <span class="step__num">2</span>
-            <div><h3>Recibes una propuesta</h3><p>Te enviamos el alcance y el precio para que decidas.</p></div>
-          </li>
-          <li class="step">
-            <span class="step__num">3</span>
-            <div><h3>Diseñamos y desarrollamos</h3><p>Damos forma a tu marca y a tu web.</p></div>
-          </li>
-          <li class="step">
-            <span class="step__num">4</span>
-            <div><h3>Entregamos y te acompañamos</h3><p>Publicamos tu proyecto y resolvemos tus dudas.</p></div>
-          </li>
-        </ol>
-
-        <a class="next" href="#cursos">
-          <span>Prefiero aprender yo</span>
-          <span class="next__icon" data-icon="arrow"></span>
-        </a>
-      </div>
-    </section>
-
-    <!-- ================= CURSOS ================= -->
-    <section class="section section--dark" id="cursos">
-      <div class="container">
-        <div class="section__head">
-          <h2 class="section__title" data-split>¿Prefieres hacerlo tú? Aprende con nuestros cursos.</h2>
-          <p class="section__lead reveal">Aprendes con ejercicios reales y acompañamiento directo. Para inscribirte, escríbenos por WhatsApp.</p>
-        </div>
-
-        <div class="courses">
-          <!-- Curso destacado -->
-          <article class="card card--forest card--featured" data-card>
-            <div class="card__top">
-              <span class="badge badge--open">Inscripciones abiertas</span>
-            </div>
-            <h3 class="card__title">Diseño gráfico básico para emprendedores</h3>
-            <p class="card__text">
-              Aprende los fundamentos del diseño para que tus publicaciones,
-              tu logo y tus materiales se vean profesionales.
-            </p>
-
-            <ul class="facts">
-              <li><span class="icon" data-icon="calendar"></span><div><small>Comienza</small><strong>20 de noviembre</strong></div></li>
-              <li><span class="icon" data-icon="clock"></span><div><small>Duración</small><strong>1 semana</strong></div></li>
-              <li><span class="icon" data-icon="award"></span><div><small>Al terminar</small><strong>Certificado</strong></div></li>
-              <li><span class="icon" data-icon="tag"></span><div><small>Precio</small><strong>2,000 CUP</strong></div></li>
-            </ul>
-
-            <a class="btn btn--primary btn--magnetic" data-wa="Hola, quiero inscribirme en el curso Diseño gráfico básico para emprendedores." href="#contacto" target="_blank" rel="noopener">
-              <span>Inscribirme por WhatsApp</span>
-              <span class="btn__icon" data-icon="arrow"></span>
-            </a>
-          </article>
-
-          <!-- Curso con inscripciones cerradas -->
-          <article class="card card--plain" data-card>
-            <div class="card__top">
-              <span class="badge badge--closed">Inscripciones cerradas</span>
-            </div>
-            <h3 class="card__title">De marca a web</h3>
-            <p class="card__text">
-              Estrategia de marca, identidad visual y una web propia publicada
-              con su URL. Para quien no tiene experiencia en diseño ni programación.
-            </p>
-            <dl class="meta">
-              <div><dt>Fechas</dt><dd>20 de oct al 20 de nov</dd></div>
-              <div><dt>Horario</dt><dd>Lunes a viernes, 6:30 pm</dd></div>
-              <div><dt>Precio</dt><dd>5,000 CUP</dd></div>
-            </dl>
-            <button class="btn btn--disabled" type="button" disabled>Curso en marcha</button>
-          </article>
-
-          <!-- Próximamente -->
-          <article class="card card--plain card--soon" data-card>
-            <div class="card__top">
-              <span class="badge badge--soon">Próximamente</span>
-            </div>
-            <h3 class="card__title">Affinity básico para creadores</h3>
-            <p class="card__text">
-              Una introducción a Affinity para crear tus propias piezas gráficas.
-              Pronto publicaremos fechas y precio.
-            </p>
-            <a class="btn btn--outline" data-wa="Hola, quiero que me avisen cuando salga el curso Affinity básico para creadores." href="#contacto" target="_blank" rel="noopener">
-              Avísame cuando salga
-            </a>
-          </article>
-        </div>
-
-        <div class="learn">
-          <h3 class="learn__title">Así aprendes en Kozei STUDIO</h3>
-        <div class="features">
-          <article class="card card--dark" data-card>
-            <span class="feature__icon" data-icon="file"></span>
-            <h3>Material en PDF</h3>
-            <p>Guías claras que consultas cuando quieras y las veces que necesites.</p>
-          </article>
-          <article class="card card--dark" data-card>
-            <span class="feature__icon" data-icon="video"></span>
-            <h3>Videos tutoriales</h3>
-            <p>Te mostramos paso a paso cómo usar cada herramienta para que lo repitas a tu ritmo.</p>
-          </article>
-          <article class="card card--dark" data-card>
-            <span class="feature__icon" data-icon="users"></span>
-            <h3>Encuentros online</h3>
-            <p>Resuelves tus dudas en directo y ves cómo avanza cada ejercicio.</p>
-          </article>
-          <article class="card card--dark" data-card>
-            <span class="feature__icon" data-icon="chat"></span>
-            <h3>Acompañamiento por WhatsApp</h3>
-            <p>Compartes avances y preguntas por textos y audios con el equipo.</p>
-          </article>
-        </div>
-        </div>
-
-        <a class="next" href="#ventajas">
-          <span>Siguiente: por qué elegirnos</span>
-          <span class="next__icon" data-icon="arrow"></span>
-        </a>
-      </div>
-    </section>
-
-    <!-- ================= POR QUÉ ELEGIRNOS ================= -->
-    <section class="section section--light" id="ventajas">
-      <div class="container">
-        <div class="section__head">
-          <h2 class="section__title" data-split>Por qué elegir Kozei STUDIO.</h2>
-          <p class="section__lead reveal">Lo que encuentras al trabajar o aprender con nosotros.</p>
-        </div>
-
-        <div class="perks">
-          <article class="card card--forest perk perk--big" data-card>
-            <h3>Tu marca y tu web, en un mismo lugar.</h3>
-            <p>Diseñamos tu identidad visual y desarrollamos tu página, para que todo se vea y se sienta como una sola marca.</p>
-            <ul class="ticks">
-              <li><span class="icon" data-icon="check"></span>Identidad visual coherente</li>
-              <li><span class="icon" data-icon="check"></span>Una web con tu estilo</li>
-              <li><span class="icon" data-icon="check"></span>Un solo estudio para ambas cosas</li>
-            </ul>
-          </article>
-
-          <article class="card perk" data-card>
-            <span class="perk__icon" data-icon="chat"></span>
-            <h3>Trato directo</h3>
-            <p>Hablamos por WhatsApp, sin intermediarios ni formularios largos.</p>
-          </article>
-
-          <article class="card perk" data-card>
-            <span class="perk__icon" data-icon="globe"></span>
-            <h3>Se ve bien en cualquier pantalla</h3>
-            <p>Tu web funciona en celular, tableta y computadora.</p>
-          </article>
-
-          <article class="card perk" data-card>
-            <span class="perk__icon" data-icon="book"></span>
-            <h3>Hazlo tú o delega</h3>
-            <p>Puedes encargarnos el trabajo o aprender a hacerlo con nuestros cursos.</p>
-          </article>
-
-          <article class="card perk" data-card>
-            <span class="perk__icon" data-icon="tag"></span>
-            <h3>Precios claros</h3>
-            <p>Los paquetes de tienda online tienen precio publicado. El resto lo cotizamos según tu proyecto.</p>
-          </article>
-        </div>
-
-        <a class="next" href="#faq">
-          <span>Siguiente: preguntas frecuentes</span>
-          <span class="next__icon" data-icon="arrow"></span>
-        </a>
-      </div>
-    </section>
-
-    <!-- ================= PREGUNTAS ================= -->
-    <section class="section section--dark" id="faq">
-      <div class="container">
-        <div class="faq">
-          <div class="faq__intro">
-            <h2 class="section__title" data-split>Preguntas frecuentes.</h2>
-            <p class="section__lead reveal">Si tu duda no está aquí, escríbenos y te respondemos.</p>
-            <a class="btn btn--outline btn--sm reveal" data-wa="Hola, tengo una pregunta sobre Kozei STUDIO." href="#contacto" target="_blank" rel="noopener">Preguntar por WhatsApp</a>
-          </div>
-
-          <div class="faq__list reveal">
-            <details class="qa">
-              <summary>¿Necesito experiencia para tomar un curso?</summary>
-              <p>No. Nuestros cursos parten desde cero. Por ejemplo, "De marca a web" está pensado para quien solo tiene una idea de negocio y no sabe de diseño ni de programación.</p>
-            </details>
-            <details class="qa">
-              <summary>¿Cómo me inscribo en un curso?</summary>
-              <p>Escríbenos por WhatsApp desde el botón del curso que te interesa y te explicamos los pasos para reservar tu lugar.</p>
-            </details>
-            <details class="qa">
-              <summary>¿Qué recibo al terminar un curso?</summary>
-              <p>Depende del curso. En "Diseño gráfico básico para emprendedores" recibes un certificado. En "De marca a web" terminas con una identidad visual básica y una página web publicada con su propia dirección.</p>
-            </details>
-            <details class="qa">
-              <summary>¿Cómo se cotiza una web o una tienda online?</summary>
-              <p>Cada proyecto se cotiza según lo que necesites. Cuéntanos tu idea por WhatsApp y te enviamos una propuesta con el alcance y el precio.</p>
-            </details>
-          </div>
-        </div>
-
-        <a class="next" href="#contacto">
-          <span>Siguiente: contacto</span>
-          <span class="next__icon" data-icon="arrow"></span>
-        </a>
-      </div>
-    </section>
-
-    <!-- ================= CONTACTO ================= -->
-    <section class="section section--light" id="contacto">
-      <div class="container">
-        <div class="contact">
-          <h2 class="section__title" data-split>Cuéntanos qué necesitas.</h2>
-          <p class="section__lead reveal">Elige una opción y abrimos WhatsApp con el mensaje listo.</p>
-
-          <div class="picks reveal" style="--d: 0.1s" role="group" aria-label="¿Qué necesitas?">
-            <button class="pick" type="button" data-need="web" aria-pressed="false">Una web</button>
-            <button class="pick" type="button" data-need="tienda" aria-pressed="false">Una tienda online</button>
-            <button class="pick" type="button" data-need="curso" aria-pressed="false">Un curso</button>
-            <button class="pick" type="button" data-need="otro" aria-pressed="false">Otra consulta</button>
-          </div>
-
-          <div class="contact__cta reveal" style="--d: 0.2s">
-            <a class="btn btn--primary btn--lg btn--magnetic" id="contactBtn" data-wa="Hola, quiero más información sobre Kozei STUDIO." href="#" target="_blank" rel="noopener">
-              <span>Contactar por WhatsApp</span>
-              <span class="btn__icon" data-icon="arrow"></span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Botón flotante de WhatsApp -->
-  <a class="fab" id="fab" data-wa="Hola, quiero más información sobre Kozei STUDIO." href="#contacto" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
-    <span class="fab__icon" data-icon="chat"></span>
-    <span class="fab__label">¿Hablamos?</span>
-  </a>
-
-  <!-- ================= PIE ================= -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer__top">
-        <div class="footer__brand">
-          <a href="#inicio" class="brand" aria-label="Kozei STUDIO, volver arriba">
-            <span class="brand__mark"><img src="img/logo.png" alt="" width="40" height="40" /></span>
-            <span class="brand__name">Kozei <span>STUDIO</span></span>
-          </a>
-          <p>Estudio de diseño gráfico y desarrollo web con base en Cuba. Cursos prácticos para emprendedores y creadores.</p>
-          <a class="btn btn--outline btn--sm" data-wa="Hola, quiero más información sobre los cursos de Kozei STUDIO." href="#contacto" target="_blank" rel="noopener">
-            <span class="icon" data-icon="chat"></span>
-            <span>Escríbenos por WhatsApp</span>
+          <a class="next" href="#cursos">
+            <span>Prefiero aprender yo</span>
+            <span class="next__icon" data-icon="arrow"></span>
           </a>
         </div>
+      </section>
 
-        <nav class="footer__col" aria-label="Explorar">
-          <h4>Explorar</h4>
-          <a href="#inicio">Inicio</a>
-          <a href="#servicios">Servicios</a>
-          <a href="#proceso">Proceso</a>
-          <a href="#cursos">Cursos</a>
-          <a href="#ventajas">Por qué elegirnos</a>
-          <a href="#contacto">Contacto</a>
-        </nav>
+      <!-- ================= CURSOS ================= -->
+      <section class="section section--dark" id="cursos">
+        <div class="container">
+          <div class="section__head">
+            <h2 class="section__title" data-split>
+              ¿Prefieres hacerlo tú? Aprende con nuestros cursos.
+            </h2>
+            <p class="section__lead reveal">
+              Aprendes con ejercicios reales y acompañamiento directo. Para
+              inscribirte, escríbenos por WhatsApp.
+            </p>
+          </div>
 
-        <nav class="footer__col" aria-label="Servicios">
-          <h4>Servicios</h4>
-          <a href="#servicios">Web informativa</a>
-          <a href="#planes">Tienda online</a>
-          <a href="#servicios">Web a medida</a>
-          <a href="#cursos">Cursos</a>
-        </nav>
+          <div class="courses">
+            <!-- Curso destacado -->
+            <article class="card card--forest card--featured" data-card>
+              <div class="card__top">
+                <span class="badge badge--open">Inscripciones abiertas</span>
+              </div>
+              <h3 class="card__title">
+                Diseño gráfico básico para emprendedores
+              </h3>
+              <p class="card__text">
+                Aprende los fundamentos del diseño para que tus publicaciones,
+                tu logo y tus materiales se vean profesionales.
+              </p>
+
+              <ul class="facts">
+                <li>
+                  <span class="icon" data-icon="calendar"></span>
+                  <div>
+                    <small>Comienza</small><strong>20 de noviembre</strong>
+                  </div>
+                </li>
+                <li>
+                  <span class="icon" data-icon="clock"></span>
+                  <div><small>Duración</small><strong>1 semana</strong></div>
+                </li>
+                <li>
+                  <span class="icon" data-icon="award"></span>
+                  <div>
+                    <small>Al terminar</small><strong>Certificado</strong>
+                  </div>
+                </li>
+                <li>
+                  <span class="icon" data-icon="tag"></span>
+                  <div><small>Precio</small><strong>2,000 CUP</strong></div>
+                </li>
+              </ul>
+
+              <a
+                class="btn btn--primary btn--magnetic"
+                data-wa="Hola, quiero inscribirme en el curso Diseño gráfico básico para emprendedores."
+                href="#contacto"
+                target="_blank"
+                rel="noopener"
+              >
+                <span>Inscribirme por WhatsApp</span>
+                <span class="btn__icon" data-icon="arrow"></span>
+              </a>
+            </article>
+
+            <!-- Curso con inscripciones cerradas -->
+            <article class="card card--plain" data-card>
+              <div class="card__top">
+                <span class="badge badge--closed">Inscripciones cerradas</span>
+              </div>
+              <h3 class="card__title">De marca a web</h3>
+              <p class="card__text">
+                Estrategia de marca, identidad visual y una web propia publicada
+                con su URL. Para quien no tiene experiencia en diseño ni
+                programación.
+              </p>
+              <dl class="meta">
+                <div>
+                  <dt>Fechas</dt>
+                  <dd>20 de oct al 20 de nov</dd>
+                </div>
+                <div>
+                  <dt>Horario</dt>
+                  <dd>Lunes a viernes, 6:30 pm</dd>
+                </div>
+                <div>
+                  <dt>Precio</dt>
+                  <dd>5,000 CUP</dd>
+                </div>
+              </dl>
+              <button class="btn btn--disabled" type="button" disabled>
+                Curso en marcha
+              </button>
+            </article>
+
+            <!-- Próximamente -->
+            <article class="card card--plain card--soon" data-card>
+              <div class="card__top">
+                <span class="badge badge--soon">Próximamente</span>
+              </div>
+              <h3 class="card__title">Affinity básico para creadores</h3>
+              <p class="card__text">
+                Una introducción a Affinity para crear tus propias piezas
+                gráficas. Pronto publicaremos fechas y precio.
+              </p>
+              <a
+                class="btn btn--outline"
+                data-wa="Hola, quiero que me avisen cuando salga el curso Affinity básico para creadores."
+                href="#contacto"
+                target="_blank"
+                rel="noopener"
+              >
+                Avísame cuando salga
+              </a>
+            </article>
+          </div>
+
+          <div class="learn">
+            <h3 class="learn__title">Así aprendes en Kozei STUDIO</h3>
+            <div class="features">
+              <article class="card card--dark" data-card>
+                <span class="feature__icon" data-icon="file"></span>
+                <h3>Material en PDF</h3>
+                <p>
+                  Guías claras que consultas cuando quieras y las veces que
+                  necesites.
+                </p>
+              </article>
+              <article class="card card--dark" data-card>
+                <span class="feature__icon" data-icon="video"></span>
+                <h3>Videos tutoriales</h3>
+                <p>
+                  Te mostramos paso a paso cómo usar cada herramienta para que
+                  lo repitas a tu ritmo.
+                </p>
+              </article>
+              <article class="card card--dark" data-card>
+                <span class="feature__icon" data-icon="users"></span>
+                <h3>Encuentros online</h3>
+                <p>
+                  Resuelves tus dudas en directo y ves cómo avanza cada
+                  ejercicio.
+                </p>
+              </article>
+              <article class="card card--dark" data-card>
+                <span class="feature__icon" data-icon="chat"></span>
+                <h3>Acompañamiento por WhatsApp</h3>
+                <p>
+                  Compartes avances y preguntas por textos y audios con el
+                  equipo.
+                </p>
+              </article>
+            </div>
+          </div>
+
+          <a class="next" href="#ventajas">
+            <span>Siguiente: por qué elegirnos</span>
+            <span class="next__icon" data-icon="arrow"></span>
+          </a>
+        </div>
+      </section>
+
+      <!-- ================= POR QUÉ ELEGIRNOS ================= -->
+      <section class="section section--light" id="ventajas">
+        <div class="container">
+          <div class="section__head">
+            <h2 class="section__title" data-split>
+              Por qué elegir Kozei STUDIO.
+            </h2>
+            <p class="section__lead reveal">
+              Lo que encuentras al trabajar o aprender con nosotros.
+            </p>
+          </div>
+
+          <div class="perks">
+            <article class="card card--forest perk perk--big" data-card>
+              <h3>Tu marca y tu web, en un mismo lugar.</h3>
+              <p>
+                Diseñamos tu identidad visual y desarrollamos tu página, para
+                que todo se vea y se sienta como una sola marca.
+              </p>
+              <ul class="ticks">
+                <li>
+                  <span class="icon" data-icon="check"></span>Identidad visual
+                  coherente
+                </li>
+                <li>
+                  <span class="icon" data-icon="check"></span>Una web con tu
+                  estilo
+                </li>
+                <li>
+                  <span class="icon" data-icon="check"></span>Un solo estudio
+                  para ambas cosas
+                </li>
+              </ul>
+            </article>
+
+            <article class="card perk" data-card>
+              <span class="perk__icon" data-icon="chat"></span>
+              <h3>Trato directo</h3>
+              <p>
+                Hablamos por WhatsApp, sin intermediarios ni formularios largos.
+              </p>
+            </article>
+
+            <article class="card perk" data-card>
+              <span class="perk__icon" data-icon="globe"></span>
+              <h3>Se ve bien en cualquier pantalla</h3>
+              <p>Tu web funciona en celular, tableta y computadora.</p>
+            </article>
+
+            <article class="card perk" data-card>
+              <span class="perk__icon" data-icon="book"></span>
+              <h3>Hazlo tú o delega</h3>
+              <p>
+                Puedes encargarnos el trabajo o aprender a hacerlo con nuestros
+                cursos.
+              </p>
+            </article>
+
+            <article class="card perk" data-card>
+              <span class="perk__icon" data-icon="tag"></span>
+              <h3>Precios claros</h3>
+              <p>
+                Los paquetes de tienda online tienen precio publicado. El resto
+                lo cotizamos según tu proyecto.
+              </p>
+            </article>
+          </div>
+
+          <a class="next" href="#faq">
+            <span>Siguiente: preguntas frecuentes</span>
+            <span class="next__icon" data-icon="arrow"></span>
+          </a>
+        </div>
+      </section>
+
+      <!-- ================= PREGUNTAS ================= -->
+      <section class="section section--dark" id="faq">
+        <div class="container">
+          <div class="faq">
+            <div class="faq__intro">
+              <h2 class="section__title" data-split>Preguntas frecuentes.</h2>
+              <p class="section__lead reveal">
+                Si tu duda no está aquí, escríbenos y te respondemos.
+              </p>
+              <a
+                class="btn btn--outline btn--sm reveal"
+                data-wa="Hola, tengo una pregunta sobre Kozei STUDIO."
+                href="#contacto"
+                target="_blank"
+                rel="noopener"
+                >Preguntar por WhatsApp</a
+              >
+            </div>
+
+            <div class="faq__list reveal">
+              <details class="qa">
+                <summary>¿Necesito experiencia para tomar un curso?</summary>
+                <p>
+                  No. Nuestros cursos parten desde cero. Por ejemplo, "De marca
+                  a web" está pensado para quien solo tiene una idea de negocio
+                  y no sabe de diseño ni de programación.
+                </p>
+              </details>
+              <details class="qa">
+                <summary>¿Cómo me inscribo en un curso?</summary>
+                <p>
+                  Escríbenos por WhatsApp desde el botón del curso que te
+                  interesa y te explicamos los pasos para reservar tu lugar.
+                </p>
+              </details>
+              <details class="qa">
+                <summary>¿Qué recibo al terminar un curso?</summary>
+                <p>
+                  Depende del curso. En "Diseño gráfico básico para
+                  emprendedores" recibes un certificado. En "De marca a web"
+                  terminas con una identidad visual básica y una página web
+                  publicada con su propia dirección.
+                </p>
+              </details>
+              <details class="qa">
+                <summary>¿Cómo se cotiza una web o una tienda online?</summary>
+                <p>
+                  Cada proyecto se cotiza según lo que necesites. Cuéntanos tu
+                  idea por WhatsApp y te enviamos una propuesta con el alcance y
+                  el precio.
+                </p>
+              </details>
+            </div>
+          </div>
+
+          <a class="next" href="#contacto">
+            <span>Siguiente: contacto</span>
+            <span class="next__icon" data-icon="arrow"></span>
+          </a>
+        </div>
+      </section>
+
+      <!-- ================= CONTACTO ================= -->
+      <section class="section section--light" id="contacto">
+        <div class="container">
+          <div class="contact">
+            <h2 class="section__title" data-split>Cuéntanos qué necesitas.</h2>
+            <p class="section__lead reveal">
+              Elige una opción y abrimos WhatsApp con el mensaje listo.
+            </p>
+
+            <div
+              class="picks reveal"
+              style="--d: 0.1s"
+              role="group"
+              aria-label="¿Qué necesitas?"
+            >
+              <button
+                class="pick"
+                type="button"
+                data-need="web"
+                aria-pressed="false"
+              >
+                Una web
+              </button>
+              <button
+                class="pick"
+                type="button"
+                data-need="tienda"
+                aria-pressed="false"
+              >
+                Una tienda online
+              </button>
+              <button
+                class="pick"
+                type="button"
+                data-need="curso"
+                aria-pressed="false"
+              >
+                Un curso
+              </button>
+              <button
+                class="pick"
+                type="button"
+                data-need="otro"
+                aria-pressed="false"
+              >
+                Otra consulta
+              </button>
+            </div>
+
+            <div class="contact__cta reveal" style="--d: 0.2s">
+              <a
+                class="btn btn--primary btn--lg btn--magnetic"
+                id="contactBtn"
+                data-wa="Hola, quiero más información sobre Kozei STUDIO."
+                href="#"
+                target="_blank"
+                rel="noopener"
+              >
+                <span>Contactar por WhatsApp</span>
+                <span class="btn__icon" data-icon="arrow"></span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Botón flotante de WhatsApp -->
+    <a
+      class="fab"
+      id="fab"
+      data-wa="Hola, quiero más información sobre Kozei STUDIO."
+      href="#contacto"
+      target="_blank"
+      rel="noopener"
+      aria-label="Escribir por WhatsApp"
+    >
+      <span class="fab__icon" data-icon="chat"></span>
+      <span class="fab__label">¿Hablamos?</span>
+    </a>
+
+    <!-- ================= PIE ================= -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__top">
+          <div class="footer__brand">
+            <a
+              href="#inicio"
+              class="brand"
+              aria-label="Kozei STUDIO, volver arriba"
+            >
+              <span class="brand__mark"
+                ><img src="img/logo.png" alt="" width="40" height="40"
+              /></span>
+              <span class="brand__name">Kozei <span>STUDIO</span></span>
+            </a>
+            <p>
+              Estudio de diseño gráfico y desarrollo web con base en Cuba.
+              Cursos prácticos para emprendedores y creadores.
+            </p>
+            <a
+              class="btn btn--outline btn--sm"
+              data-wa="Hola, quiero más información sobre los cursos de Kozei STUDIO."
+              href="#contacto"
+              target="_blank"
+              rel="noopener"
+            >
+              <span class="icon" data-icon="chat"></span>
+              <span>Escríbenos por WhatsApp</span>
+            </a>
+          </div>
+
+          <nav class="footer__col" aria-label="Explorar">
+            <h4>Explorar</h4>
+            <a href="#inicio">Inicio</a>
+            <a href="#servicios">Servicios</a>
+            <a href="#proceso">Proceso</a>
+            <a href="#cursos">Cursos</a>
+            <a href="#ventajas">Por qué elegirnos</a>
+            <a href="#contacto">Contacto</a>
+          </nav>
+
+          <nav class="footer__col" aria-label="Servicios">
+            <h4>Servicios</h4>
+            <a href="#servicios">Web informativa</a>
+            <a href="#planes">Tienda online</a>
+            <a href="#servicios">Web a medida</a>
+            <a href="#cursos">Cursos</a>
+          </nav>
+        </div>
+
+        <div class="footer__bottom">
+          <p>
+            © <span id="year">2026</span> Kozei STUDIO. Diseño gráfico y
+            desarrollo web.
+          </p>
+          <a href="#inicio" class="to-top">
+            <span>Volver arriba</span>
+            <span class="to-top__icon" data-icon="arrow"></span>
+          </a>
+        </div>
       </div>
-
-      <div class="footer__bottom">
-        <p>© <span id="year">2026</span> Kozei STUDIO. Diseño gráfico y desarrollo web.</p>
-        <a href="#inicio" class="to-top">
-          <span>Volver arriba</span>
-          <span class="to-top__icon" data-icon="arrow"></span>
-        </a>
-      </div>
-    </div>
-  </footer>
-</body>
+    </footer>
+  </body>
 </html>
