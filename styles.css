@@ -517,6 +517,29 @@ ul { list-style: none; }
 .ticks li { display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.95rem; }
 .ticks .icon { width: 18px; height: 18px; margin-top: 0.18rem; color: var(--emerald); }
 .service .btn, .plan .btn { margin-top: auto; }
+/* Grupos de servicios */
+.services-block { display: grid; gap: clamp(2.5rem, 5vw, 4rem); }
+.services-group__head { display: grid; gap: 0.4rem; margin-bottom: 1.5rem; }
+.services-group__head h3 {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  letter-spacing: -0.03em;
+}
+.services-group__mark {
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+  background: var(--emerald);
+  transform: rotate(45deg);
+  flex-shrink: 0;
+}
+.services-group__head p { color: var(--fg-muted); max-width: 52ch; }
+/* Paquetes dentro del grupo de desarrollo web */
+.services-group .plans { margin-top: clamp(2rem, 4vw, 3rem); }
 
 .plans { margin-top: clamp(3rem, 6vw, 5rem); }
 .plans__head { display: grid; gap: 0.4rem; margin-bottom: 1.5rem; }

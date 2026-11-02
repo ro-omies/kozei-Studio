@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cursos online | Kozei STUDIO</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#05140e" />
+  <link rel="icon" href="img/favicon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="cursos-online.css" />
+</head>
+<body>
+  <div class="glow" aria-hidden="true"></div>
+
+  <!-- ================= BARRA SUPERIOR ================= -->
+  <header class="topbar">
+    <div class="topbar__inner">
+      <a class="brand" href="index.html" aria-label="Kozei STUDIO, volver al sitio">
+        <span class="brand__mark"><img src="img/logo.png" alt="" width="40" height="40" /></span>
+        <span class="brand__name">Kozei <span>STUDIO</span></span>
+        <span class="brand__tag">Cursos online</span>
+      </a>
+      <nav class="topbar__nav" id="topNav" aria-label="Cuenta"></nav>
+    </div>
+  </header>
+
+  <main class="shell" id="app">
+    <div class="notice notice--warn" id="configNotice" hidden></div>
+
+    <!-- Cargando -->
+    <section class="view" id="view-loading">
+      <div class="loader" role="status" aria-label="Cargando"><span></span></div>
+    </section>
+
+    <!-- ================= ACCESO ================= -->
+    <section class="view" id="view-auth" hidden>
+      <div class="auth">
+        <div class="auth__intro">
+          <h1>Tus cursos, en un solo lugar.</h1>
+          <p>Accede a los videos y materiales de Kozei STUDIO cuando quieras, desde tu celular o computadora.</p>
+          <ol class="flow">
+            <li><span>1</span><div><strong>Crea tu cuenta</strong><p>Regístrate con tu correo y tu WhatsApp.</p></div></li>
+            <li><span>2</span><div><strong>Paga por Transfermóvil</strong><p>Te mostramos los datos y envías el comprobante.</p></div></li>
+            <li><span>3</span><div><strong>Activamos tu acceso</strong><p>Cuando confirmemos el pago, entras a tus cursos.</p></div></li>
+          </ol>
+        </div>
+
+        <div class="auth__card card">
+          <div class="tabs" role="tablist" aria-label="Acceso">
+            <button class="tabs__btn is-active" id="tab-login" type="button" role="tab" aria-selected="true" data-tab="login">Entrar</button>
+            <button class="tabs__btn" id="tab-register" type="button" role="tab" aria-selected="false" data-tab="register">Crear cuenta</button>
+          </div>
+
+          <form id="loginForm" class="form" novalidate>
+            <label class="field">
+              <span>Correo electrónico</span>
+              <input type="email" name="email" autocomplete="email" required placeholder="tucorreo@ejemplo.com" />
+            </label>
+            <label class="field">
+              <span>Contraseña</span>
+              <input type="password" name="password" autocomplete="current-password" required placeholder="Tu contraseña" />
+            </label>
+            <button class="btn btn--primary btn--block" type="submit">Entrar a mis cursos</button>
+            <button class="link-btn" type="button" id="forgotBtn">Olvidé mi contraseña</button>
+          </form>
+
+          <form id="registerForm" class="form" hidden novalidate>
+            <label class="field">
+              <span>Nombre completo</span>
+              <input type="text" name="full_name" autocomplete="name" required placeholder="Tu nombre y apellidos" />
+            </label>
+            <label class="field">
+              <span>WhatsApp</span>
+              <input type="tel" name="whatsapp" autocomplete="tel" required placeholder="Ej: 5 5555555" />
+              <small>Lo usamos para confirmar tu pago y activar tu acceso.</small>
+            </label>
+            <label class="field">
+              <span>Correo electrónico</span>
+              <input type="email" name="email" autocomplete="email" required placeholder="tucorreo@ejemplo.com" />
+            </label>
+            <label class="field">
+              <span>Contraseña</span>
+              <input type="password" name="password" autocomplete="new-password" required minlength="8" placeholder="Mínimo 8 caracteres" />
+            </label>
+            <label class="check">
+              <input type="checkbox" name="terms" required />
+              <span>Entiendo que el contenido es personal e intransferible y que no puedo descargarlo ni compartirlo.</span>
+            </label>
+            <button class="btn btn--primary btn--block" type="submit">Crear mi cuenta</button>
+          </form>
+
+          <p class="auth__msg" id="authMsg" role="status" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= NUEVA CONTRASEÑA ================= -->
+    <section class="view" id="view-recover" hidden>
+      <div class="narrow card">
+        <h1 class="h2">Elige una nueva contraseña</h1>
+        <form id="recoverForm" class="form" novalidate>
+          <label class="field">
+            <span>Nueva contraseña</span>
+            <input type="password" name="password" autocomplete="new-password" required minlength="8" placeholder="Mínimo 8 caracteres" />
+          </label>
+          <button class="btn btn--primary btn--block" type="submit">Guardar contraseña</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Las demás vistas se dibujan desde JavaScript -->
+    <section class="view" id="view-pending" hidden></section>
+    <section class="view" id="view-courses" hidden></section>
+    <section class="view" id="view-course" hidden></section>
+    <section class="view" id="view-admin" hidden></section>
+  </main>
+
+  <!-- Ventana emergente -->
+  <div class="modal" id="modal" hidden>
+    <div class="modal__box" id="modalBox" role="dialog" aria-modal="true"></div>
+  </div>
+
+  <!-- Avisos -->
+  <div class="toasts" id="toasts" aria-live="polite"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script src="supabase-config.js"></script>
+  <script src="cursos-online.js"></script>
+</body>
+</html>
