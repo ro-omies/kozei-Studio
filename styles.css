@@ -582,6 +582,66 @@ ul { list-style: none; }
 .section--dark .card--featured { border-color: rgba(34, 197, 139, 0.35); }
 .learn { margin-top: clamp(3rem, 6vw, 5rem); }
 .learn__title { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.5rem, 3vw, 2.2rem); letter-spacing: -0.03em; margin-bottom: 1.5rem; }
+/* Curso Claude: temario y notas */
+.syllabus__title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.05rem;
+  letter-spacing: -0.02em;
+  margin: 1.5rem 0 0.75rem;
+}
+
+.syllabus {
+  display: grid;
+  gap: 1rem;
+  width: 100%;
+  margin-bottom: 1.25rem;
+}
+
+.syllabus__day strong {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.98rem;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.35rem;
+}
+
+.syllabus__day ul {
+  display: grid;
+  gap: 0.3rem;
+  padding-left: 1.1rem;
+  list-style: disc;
+}
+
+.syllabus__day li {
+  color: var(--fg-muted);
+  font-size: 0.93rem;
+  line-height: 1.45;
+}
+
+.syllabus__quote {
+  width: 100%;
+  margin: 1.25rem 0;
+  padding: 0.9rem 1.1rem;
+  border-left: 3px solid var(--emerald);
+  background: rgba(34, 197, 139, 0.06);
+  border-radius: 0 12px 12px 0;
+  font-size: 0.95rem;
+  font-style: italic;
+  color: var(--fg);
+}
+
+.syllabus__note {
+  width: 100%;
+  margin-top: 0.85rem;
+  font-size: 0.88rem;
+  color: var(--fg-muted);
+}
+
+.syllabus__note strong {
+  color: var(--emerald);
+}
 
 /* Por qué elegirnos */
 .perks { display: grid; grid-template-columns: 1fr; gap: 1rem; }
@@ -764,4 +824,39 @@ ul { list-style: none; }
   .window, .layer { transform: none !important; }
   .cursor { display: none; }
   .path li::after { transform: none !important; }
+}
+
+/* ---------- Cursos: abiertos arriba, cerrados abajo ---------- */
+.courses-group + .courses-group { margin-top: clamp(2.5rem, 5vw, 4rem); }
+
+.courses-group__title {
+  display: flex; align-items: center; gap: 0.85rem;
+  font-family: var(--font-display); font-weight: 600; font-size: 1.15rem;
+  letter-spacing: -0.02em; margin-bottom: 1.25rem;
+}
+.courses-group__title::before {
+  content: ""; flex: none; width: 8px; height: 8px; border-radius: 50%;
+}
+.courses-group__title::after {
+  content: ""; flex: 1; height: 1px; background: var(--rule);
+}
+.courses-group--open .courses-group__title::before {
+  background: var(--emerald); box-shadow: 0 0 0 4px rgba(34, 197, 139, 0.18);
+}
+.courses-group--closed .courses-group__title::before {
+  background: var(--fg-muted); box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.06);
+}
+
+/* Las dos tarjetas abiertas comparten el mismo tamaño y orden interno */
+.courses--open .card--featured .card__title { font-size: clamp(1.5rem, 2.4vw, 2rem); max-width: none; }
+.courses--open .facts { margin-top: 0; }
+.courses--open .card--featured .btn { margin-top: auto; }
+
+/* Material de las clases en una sola fila */
+.ticks--row { display: flex; flex-wrap: wrap; gap: 0.6rem 1.5rem; }
+
+@media (min-width: 900px) {
+  .courses--open,
+  .courses--closed { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+  .courses--open .card--featured { grid-row: auto; }
 }
