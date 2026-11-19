@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Inscripción | Kozei STUDIO</title>
+    <meta
+      name="description"
+      content="Inscríbete en los cursos de Kozei STUDIO: completa el formulario, paga por Transfermóvil y confirma tu lugar por WhatsApp."
+    />
+    <meta name="theme-color" content="#05140e" />
+    <link rel="icon" href="img/favicon.ico" />
+
+    <!-- Tipografías -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&family=Instrument+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+    <script src="main.js" defer></script>
+    <!-- Vercel Web Analytics -->
+    <script>
+      window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
+  </head>
+  <body>
+    <div class="progress" aria-hidden="true">
+      <span id="progressBar"></span>
+    </div>
+    <a class="skip-link" href="#inscripcion">Saltar al contenido</a>
+
+    <!-- ================= ENCABEZADO ================= -->
+    <header class="header" id="header">
+      <div class="container header__inner">
+        <a href="index.html#inicio" class="brand" aria-label="Kozei STUDIO, ir al inicio">
+          <span class="brand__mark"
+            ><img src="img/logo.png" alt="" width="40" height="40"
+          /></span>
+          <span class="brand__name">Kozei <span>STUDIO</span></span>
+        </a>
+
+        <nav class="nav" id="nav" aria-label="Principal">
+          <a href="index.html#servicios" class="nav__link" data-section="servicios">Servicios</a>
+          <a href="index.html#proceso" class="nav__link" data-section="proceso">Proceso</a>
+          <a href="index.html#cursos" class="nav__link is-active" data-section="cursos">Cursos</a>
+          <a href="index.html#ventajas" class="nav__link" data-section="ventajas">Por qué elegirnos</a>
+          <a href="index.html#contacto" class="nav__link" data-section="contacto">Contacto</a>
+        </nav>
+
+        <a
+          class="btn btn--primary btn--sm header__cta"
+          data-wa="Hola, quiero más información sobre los cursos de Kozei STUDIO."
+          href="index.html#contacto"
+          target="_blank"
+          rel="noopener"
+        >
+          <span>Escríbenos</span>
+        </a>
+
+        <button
+          class="menu-toggle"
+          id="menuToggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="nav"
+          aria-label="Abrir menú"
+        >
+          <span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <!-- ================= INSCRIPCIÓN ================= -->
+      <section class="section section--dark enroll" id="inscripcion">
+        <div class="container">
+          <a class="enroll__back" href="index.html#cursos">
+            <span class="icon" data-icon="arrow"></span>
+            <span>Volver a los cursos</span>
+          </a>
+
+          <div class="section__head">
+            <h1 class="section__title" data-split>Reserva tu lugar en el curso.</h1>
+            <p class="section__lead reveal">
+              Completa el formulario, paga por Transfermóvil y envíanos la
+              captura por WhatsApp para formalizar tu inscripción.
+            </p>
+          </div>
+
+          <!-- Curso cerrado o no encontrado -->
+          <article class="card card--plain enroll__closed" id="enrollClosed" data-card hidden>
+            <div class="card__top">
+              <span class="badge badge--closed">Inscripciones cerradas</span>
+            </div>
+            <h2 class="card__title" id="closedTitle"></h2>
+            <p class="card__text" id="closedText"></p>
+            <div class="enroll__actions">
+              <a class="btn btn--primary btn--magnetic" href="index.html#cursos">
+                <span>Ver cursos abiertos</span>
+                <span class="btn__icon" data-icon="arrow"></span>
+              </a>
+              <a
+                class="btn btn--outline"
+                id="closedNotify"
+                href="#"
+                target="_blank"
+                rel="noopener"
+                >Avisarme por WhatsApp</a
+              >
+            </div>
+          </article>
+
+          <div class="enroll__grid" id="enrollGrid">
+            <div class="enroll__info">
+              <!-- Información del curso -->
+              <article class="card card--forest card--featured" data-card>
+                <div class="card__top">
+                  <span class="badge badge--open">Inscripciones abiertas</span>
+                </div>
+                <h2 class="card__title" id="courseTitle"></h2>
+                <p class="card__text" id="courseText"></p>
+                <ul class="facts" id="courseFacts"></ul>
+                <h3 class="syllabus__title">Contenido del curso</h3>
+                <ul class="ticks" id="courseTopics"></ul>
+              </article>
+
+              <!-- Forma de pago -->
+              <article class="card card--dark pay" data-card>
+                <h2 class="card__title">Cómo pagar por Transfermóvil</h2>
+                <ol class="pay__steps">
+                  <li>
+                    <div>Abre Transfermóvil y elige <strong>Transferir</strong>.</div>
+                  </li>
+                  <li>
+                    <div>
+                      Envía <strong id="payAmount"></strong> a esta tarjeta:
+                      <div class="pay__card" id="payCard">
+                        <div>
+                          <span class="pay__number" id="payNumber"></span>
+                          <span class="pay__holder" id="payHolder"></span>
+                          <span class="pay__holder pay__confirm" id="payConfirm"></span>
+                        </div>
+                        <button class="btn btn--outline btn--sm" id="payCopy" type="button">Copiar número</button>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div>Haz una captura de pantalla de la transferencia terminada.</div>
+                  </li>
+                  <li>
+                    <div>
+                      Completa el formulario. Al terminar se abre WhatsApp y nos
+                      envías la captura para formalizar tu inscripción.
+                    </div>
+                  </li>
+                </ol>
+                <p class="pay__note" id="payNote"></p>
+              </article>
+            </div>
+
+            <!-- Formulario -->
+            <form class="card card--dark enroll__form" id="enrollForm" data-card novalidate>
+              <div>
+                <h2 class="card__title">Tus datos</h2>
+                <p class="card__text">
+                  Los usamos solo para preparar tu mensaje de inscripción por
+                  WhatsApp.
+                </p>
+              </div>
+
+              <div class="field">
+                <label for="fName">Nombre y apellidos</label>
+                <input id="fName" type="text" autocomplete="name" required />
+                <p class="field__error" role="alert"></p>
+              </div>
+
+              <div class="field">
+                <label for="fPhone">Tu número de WhatsApp</label>
+                <input id="fPhone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+53 5 123 4567" required />
+                <p class="field__error" role="alert"></p>
+              </div>
+
+              <div class="field">
+                <label for="fProvince">Provincia</label>
+                <input id="fProvince" type="text" autocomplete="address-level1" required />
+                <p class="field__error" role="alert"></p>
+              </div>
+
+              <div class="field">
+                <label for="fEmail">Correo electrónico <small>(opcional)</small></label>
+                <input id="fEmail" type="email" autocomplete="email" />
+                <p class="field__error" role="alert"></p>
+              </div>
+
+              <div class="field">
+                <label class="agree" for="fAgree">
+                  <input id="fAgree" type="checkbox" required />
+                  <span>Voy a enviar la captura de mi pago por WhatsApp para formalizar mi inscripción.</span>
+                </label>
+                <p class="field__error" role="alert"></p>
+              </div>
+
+              <button class="btn btn--primary btn--lg btn--magnetic enroll__submit" id="enrollSubmit" type="submit">
+                <span>Continuar a WhatsApp</span>
+                <span class="btn__icon" data-icon="arrow"></span>
+              </button>
+              <p class="enroll__hint">
+                Tu inscripción queda formalizada cuando nos escribes por
+                WhatsApp con la captura del pago.
+              </p>
+              <p class="enroll__fallback" id="enrollFallback" hidden>
+                ¿No se abrió WhatsApp?
+                <a id="enrollFallbackLink" href="#" target="_blank" rel="noopener">Ábrelo aquí</a>.
+              </p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ================= PIE ================= -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__top">
+          <div class="footer__brand">
+            <a href="index.html#inicio" class="brand" aria-label="Kozei STUDIO, ir al inicio">
+              <span class="brand__mark"
+                ><img src="img/logo.png" alt="" width="40" height="40"
+              /></span>
+              <span class="brand__name">Kozei <span>STUDIO</span></span>
+            </a>
+            <p>
+              Estudio de diseño gráfico y desarrollo web con base en Cuba.
+              Cursos prácticos para emprendedores y creadores.
+            </p>
+            <a
+              class="btn btn--outline btn--sm"
+              data-wa="Hola, quiero más información sobre los cursos de Kozei STUDIO."
+              href="index.html#contacto"
+              target="_blank"
+              rel="noopener"
+            >
+              <span class="icon" data-icon="chat"></span>
+              <span>Escríbenos por WhatsApp</span>
+            </a>
+          </div>
+
+          <nav class="footer__col" aria-label="Explorar">
+            <h4>Explorar</h4>
+            <a href="index.html#inicio">Inicio</a>
+            <a href="index.html#servicios">Servicios</a>
+            <a href="index.html#proceso">Proceso</a>
+            <a href="index.html#cursos">Cursos</a>
+            <a href="index.html#ventajas">Por qué elegirnos</a>
+            <a href="index.html#contacto">Contacto</a>
+          </nav>
+
+          <nav class="footer__col" aria-label="Servicios">
+            <h4>Servicios</h4>
+            <a href="index.html#servicios">Web informativa</a>
+            <a href="index.html#planes">Tienda online</a>
+            <a href="index.html#servicios">Web a medida</a>
+            <a href="index.html#cursos">Cursos</a>
+          </nav>
+        </div>
+
+        <div class="footer__bottom">
+          <p>
+            © <span id="year">2026</span> Kozei STUDIO. Diseño gráfico y
+            desarrollo web.
+          </p>
+          <a href="#inscripcion" class="to-top">
+            <span>Volver arriba</span>
+            <span class="to-top__icon" data-icon="arrow"></span>
+          </a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -10,6 +10,7 @@
    7. Hero: parallax, maqueta, paleta y código
    8. Efectos de tarjetas y botones
    9. Enlaces de WhatsApp
+   10. Inscripción a cursos (inscripcion.html)
    ========================================================== */
 
 (() => {
@@ -141,7 +142,7 @@
 
   function updateHeader() {
     header.classList.toggle("is-scrolled", window.scrollY > 24);
-    fab.classList.toggle("is-visible", window.scrollY > 500);
+    if (fab) fab.classList.toggle("is-visible", window.scrollY > 500);
     const max = document.documentElement.scrollHeight - window.innerHeight;
     progressBar.style.transform = `scaleX(${max > 0 ? window.scrollY / max : 0})`;
   }
@@ -164,7 +165,7 @@
       entries.forEach((entry) => {
         if (!entry.isIntersecting) return;
         const id = entry.target.id;
-        fab.classList.toggle("is-hidden", id === "contacto");
+        if (fab) fab.classList.toggle("is-hidden", id === "contacto");
         navLinks.forEach((link) => link.classList.toggle("is-active", link.dataset.section.split(" ").includes(id)));
         railLinks.forEach((link) => link.classList.toggle("is-active", link.dataset.target === id));
       });
@@ -259,6 +260,8 @@
   const stage = $("#stage");
   const mock = $("#mock");
 
+  // La maqueta del hero solo existe en index.html
+  if (hero && stage && mock) {
   // 7.1 Parallax y foco de luz que siguen al cursor
   if (CONFIG.canHover && !CONFIG.reducedMotion) {
     hero.addEventListener("pointermove", (e) => {
@@ -352,6 +355,8 @@
     }, 70);
   }
 
+  }
+
   /* ---------- 8. Efectos de tarjetas y botones ---------- */
   // Resplandor que sigue al cursor dentro de cada tarjeta
   $$("[data-card]").forEach((card) => {
@@ -399,10 +404,10 @@
     });
   });
 
-  // Cuenta atrás hasta el inicio del curso (20 de noviembre)
+  // Cuenta atrás hasta el inicio del curso (1 de diciembre)
   const countdown = $("#countdown");
   if (countdown) {
-    const start = new Date(2026, 10, 20);
+    const start = new Date(2026, 11, 1);
     const today = new Date();
     today.setHours(0, 0, 0, 0);
     const days = Math.round((start - today) / 86400000);
@@ -415,4 +420,173 @@
   // Año actual en el pie de página
   const year = $("#year");
   if (year) year.textContent = new Date().getFullYear();
+
+  /* ---------- 10. Inscripción a cursos (inscripcion.html) ---------- */
+  // Datos de pago por Transfermóvil. Si "card" queda vacío, la página
+  // pide el número de tarjeta por WhatsApp.
+  const PAYMENT = {
+    method: "Transfermóvil",
+    card: "9224 9598 7903 4211", // tarjeta que recibe la transferencia
+    confirmPhone: "53850111",    // número a confirmar en Transfermóvil
+    holder: "",                  // nombre del titular (opcional)
+    note: "Guarda la captura de la transferencia terminada: nos la envías por WhatsApp.",
+  };
+
+  // Para abrir una nueva edición: pon open en true y actualiza start y duration.
+  // El enlace de cada curso es inscripcion.html?curso=<clave>
+  const COURSES = {
+    "diseno-grafico": {
+      open: true,
+      title: "Diseño gráfico básico para emprendedores",
+      text: "Aprende los fundamentos del diseño para que tus publicaciones, tu logo y tus materiales se vean profesionales.",
+      start: "1 de diciembre",
+      duration: "1 semana",
+      finish: { label: "Al terminar", value: "Certificado", icon: "award" },
+      price: "2,000 CUP",
+      topics: [
+        "Qué es la identidad visual",
+        "Logotipo y versiones",
+        "Paleta de colores",
+        "Tipografías y cómo combinarlas",
+        "Composición y jerarquía",
+        "Cómo hacer posts profesionales",
+        "Mini manual de marca",
+      ],
+    },
+    "claude-basico": {
+      open: false,
+      title: "Aprende Claude Básico",
+      closedText: "Las inscripciones de esta edición están cerradas. Habrá una nueva edición a mediados de diciembre.",
+      text: "Aprende desde cero a usar Claude: crea tu cuenta, conecta tus herramientas, configura skills y escribe prompts que funcionan.",
+      start: "Por confirmar",
+      duration: "3 días",
+      finish: { label: "Modalidad", value: "Online", icon: "globe" },
+      price: "1,000 CUP",
+      topics: [
+        "Qué es Claude",
+        "Crear tu cuenta en Claude",
+        "Qué son los conectores y en qué nos ayudan",
+        "Cómo configurarlos",
+        "Qué son las Skills, cómo nos ayudan y cómo configurarlas",
+        "Cómo crear prompts funcionales para Claude",
+      ],
+    },
+  };
+
+  const enrollForm = $("#enrollForm");
+  if (enrollForm) {
+    const key = new URLSearchParams(location.search).get("curso");
+    const course = COURSES[key];
+    const ico = (name) => `<span class="icon">${ICONS[name] || ""}</span>`;
+
+    if (!course || !course.open) {
+      // Curso inexistente o cerrado: se explica y se ofrece volver o avisar
+      $("#enrollGrid").hidden = true;
+      $("#enrollClosed").hidden = false;
+      $("#closedTitle").textContent = course ? course.title : "No encontramos ese curso";
+      $("#closedText").textContent = course
+        ? course.closedText || "Las inscripciones de este curso están cerradas."
+        : "Revisa el enlace o elige uno de los cursos abiertos.";
+      const notify = $("#closedNotify");
+      if (course) notify.href = waLink(`Hola, quiero que me avisen cuando abra la nueva edición de ${course.title}.`);
+      else notify.remove();
+      document.title = "Curso no disponible | Kozei STUDIO";
+    } else {
+      document.title = `Inscripción: ${course.title} | Kozei STUDIO`;
+
+      // Información del curso
+      $("#courseTitle").textContent = course.title;
+      $("#courseText").textContent = course.text;
+      const facts = [
+        ["calendar", "Comienza", course.start],
+        ["clock", "Duración", course.duration],
+        [course.finish.icon, course.finish.label, course.finish.value],
+        ["tag", "Precio", course.price],
+      ];
+      $("#courseFacts").innerHTML = facts
+        .map(([icon, label, value]) => `<li>${ico(icon)}<div><small>${label}</small><strong>${value}</strong></div></li>`)
+        .join("");
+      $("#courseTopics").innerHTML = course.topics.map((t) => `<li>${ico("check")}${t}</li>`).join("");
+
+      // Pago por Transfermóvil
+      $("#payAmount").textContent = course.price;
+      const cardBox = $("#payCard");
+      if (PAYMENT.card) {
+        $("#payNumber").textContent = PAYMENT.card;
+        $("#payHolder").textContent = PAYMENT.holder;
+        $("#payConfirm").textContent = PAYMENT.confirmPhone ? `Número a confirmar: ${PAYMENT.confirmPhone}` : "";
+        $("#payCopy").addEventListener("click", async () => {
+          const btn = $("#payCopy");
+          try {
+            await navigator.clipboard.writeText(PAYMENT.card.replace(/\s+/g, ""));
+            btn.textContent = "Copiado";
+          } catch (err) {
+            btn.textContent = "Cópiala a mano";
+          }
+          setTimeout(() => (btn.textContent = "Copiar número"), 2200);
+        });
+      } else {
+        cardBox.innerHTML = `<span class="pay__number pay__number--pending">Escríbenos por WhatsApp y te enviamos el número de tarjeta.</span>`;
+      }
+      $("#payNote").textContent = PAYMENT.note;
+
+      // Formulario
+      const fields = {
+        name: { el: $("#fName"), test: (v) => v.length >= 5, msg: "Escribe tu nombre y apellidos." },
+        phone: { el: $("#fPhone"), test: (v) => v.replace(/\D/g, "").length >= 8, msg: "Escribe un número de WhatsApp válido." },
+        province: { el: $("#fProvince"), test: (v) => v.length >= 3, msg: "Escribe tu provincia." },
+        email: { el: $("#fEmail"), test: (v) => !v || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v), msg: "Revisa el correo electrónico." },
+      };
+      const agree = $("#fAgree");
+
+      const setError = (wrap, message) => {
+        wrap.classList.toggle("is-invalid", Boolean(message));
+        wrap.querySelector(".field__error").textContent = message || "";
+      };
+
+      Object.values(fields).forEach(({ el, test, msg }) => {
+        el.addEventListener("input", () => {
+          if (el.closest(".field").classList.contains("is-invalid")) setError(el.closest(".field"), test(el.value.trim()) ? "" : msg);
+        });
+      });
+
+      enrollForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        let firstInvalid = null;
+
+        Object.values(fields).forEach(({ el, test, msg }) => {
+          const ok = test(el.value.trim());
+          setError(el.closest(".field"), ok ? "" : msg);
+          if (!ok && !firstInvalid) firstInvalid = el;
+        });
+        const agreeWrap = agree.closest(".field");
+        setError(agreeWrap, agree.checked ? "" : "Marca esta casilla para continuar.");
+        if (!agree.checked && !firstInvalid) firstInvalid = agree;
+
+        if (firstInvalid) {
+          firstInvalid.focus();
+          return;
+        }
+
+        const lines = [
+          `Hola, quiero inscribirme en el curso *${course.title}* (comienza el ${course.start}).`,
+          "",
+          `Nombre: ${fields.name.el.value.trim()}`,
+          `WhatsApp: ${fields.phone.el.value.trim()}`,
+          `Provincia: ${fields.province.el.value.trim()}`,
+        ];
+        const email = fields.email.el.value.trim();
+        if (email) lines.push(`Correo: ${email}`);
+        lines.push("", `Pago: ${course.price} por ${PAYMENT.method}. Te envío la captura a continuación.`);
+
+        const url = waLink(lines.join("\n"));
+        const submit = $("#enrollSubmit");
+        submit.disabled = true;
+        $("#enrollFallbackLink").href = url;
+        $("#enrollFallback").hidden = false;
+        window.location.href = url;
+        setTimeout(() => (submit.disabled = false), 4000);
+      });
+    }
+  }
 })();

@@ -860,3 +860,82 @@ ul { list-style: none; }
   .courses--closed { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
   .courses--open .card--featured { grid-row: auto; }
 }
+
+/* ---------- 13b. Inscripción a cursos ---------- */
+.enroll-note { margin-top: 0.9rem; font-size: 0.88rem; color: var(--fg-muted); }
+
+
+/* Página inscripcion.html */
+.enroll [hidden] { display: none !important; }
+.enroll { padding-top: calc(var(--header-h) + clamp(2rem, 5vw, 3.5rem)); }
+.enroll__back { display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 1.75rem; color: var(--fg-muted); font-size: 0.95rem; transition: color 0.25s, gap 0.35s var(--ease); }
+.enroll__back:hover { color: var(--fg); gap: 0.8rem; }
+.enroll__back .icon { width: 18px; height: 18px; }
+.enroll__back .icon svg { transform: rotate(180deg); }
+
+.enroll__grid { display: grid; grid-template-columns: 1fr; gap: 1.1rem; align-items: start; }
+.enroll__info { display: grid; gap: 1.1rem; }
+.enroll .card--featured .card__title { max-width: none; font-size: clamp(1.5rem, 2.4vw, 2rem); }
+.enroll .facts { margin-top: 0; }
+.enroll .ticks { margin-bottom: 0; }
+.enroll__closed { max-width: 640px; }
+.enroll__closed .card__text { margin-bottom: 1.5rem; }
+.enroll__actions { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+
+/* Forma de pago */
+.pay .card__title { margin-bottom: 1.25rem; }
+.pay__steps { display: grid; gap: 1rem; counter-reset: pay; }
+.pay__steps > li { counter-increment: pay; display: grid; grid-template-columns: 2rem 1fr; gap: 0.85rem; align-items: start; color: var(--fg-muted); }
+.pay__steps > li::before {
+  content: counter(pay); display: grid; place-items: center;
+  width: 2rem; height: 2rem; border-radius: 50%;
+  background: rgba(34, 197, 139, 0.18); color: var(--mint);
+  font-weight: 600; font-size: 0.9rem;
+}
+.pay__steps > li > div { padding-top: 0.28rem; }
+.pay__steps strong { color: var(--fg); font-weight: 600; }
+.pay__card {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.75rem;
+  margin-top: 0.75rem; padding: 0.9rem 1rem;
+  border: 1px dashed rgba(34, 197, 139, 0.55); border-radius: 16px; background: rgba(255, 255, 255, 0.03);
+}
+.pay__number { display: block; font-family: var(--font-display); font-weight: 600; font-size: 1.15rem; letter-spacing: 0.06em; color: #fff; }
+.pay__number--pending { font-size: 0.98rem; letter-spacing: 0; font-weight: 500; color: var(--mint); }
+.pay__holder { display: block; margin-top: 0.15rem; font-size: 0.85rem; color: var(--fg-muted); }
+.pay__holder:empty { display: none; }
+.pay__confirm { color: var(--mint); font-weight: 500; font-size: 0.92rem; }
+.pay__note { margin-top: 1.25rem; font-size: 0.9rem; color: var(--fg-muted); }
+.pay__note:empty { display: none; }
+
+/* Formulario */
+.enroll__form { display: grid; gap: 1.15rem; }
+.enroll__form .card__title { margin-bottom: 0.5rem; }
+.field { display: grid; gap: 0.45rem; }
+.field label { font-weight: 500; font-size: 0.95rem; }
+.field label small { color: var(--fg-muted); font-weight: 400; font-size: inherit; }
+.field input[type="text"],
+.field input[type="tel"],
+.field input[type="email"] {
+  width: 100%; min-height: 3.1rem; padding: 0.85rem 1.1rem;
+  font: inherit; color: var(--fg);
+  background: rgba(255, 255, 255, 0.04); border: 1px solid var(--rule); border-radius: 16px;
+  transition: border-color 0.25s, background 0.25s;
+}
+.field input::placeholder { color: #6f897b; }
+.field input:hover { border-color: rgba(34, 197, 139, 0.4); }
+.field input:focus { border-color: var(--emerald); background: rgba(34, 197, 139, 0.08); }
+.field.is-invalid input { border-color: #ff8f7d; }
+.field__error { color: #ffab9c; font-size: 0.88rem; }
+.field__error:empty { display: none; }
+.field .agree { display: flex; align-items: flex-start; gap: 0.8rem; font-weight: 400; color: var(--fg-muted); cursor: pointer; }
+.agree input { flex: none; width: 20px; height: 20px; margin-top: 0.15rem; accent-color: var(--emerald); }
+.enroll__submit { justify-self: start; }
+.enroll__submit[disabled] { opacity: 0.6; cursor: progress; }
+.enroll__hint { font-size: 0.88rem; color: var(--fg-muted); }
+.enroll__fallback { font-size: 0.95rem; color: var(--fg-muted); }
+.enroll__fallback a { color: var(--mint); text-decoration: underline; text-underline-offset: 3px; }
+
+@media (min-width: 900px) {
+  .enroll__grid { grid-template-columns: 1.1fr 0.9fr; gap: 1.5rem; }
+  .enroll__form { position: sticky; top: calc(var(--header-h) + 1.5rem); }
+}
