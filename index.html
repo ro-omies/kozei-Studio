@@ -15,7 +15,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&family=Instrument+Sans:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&family=Instrument+Sans:wght@400;500;600&family=Caveat:wght@600&display=swap"
       rel="stylesheet"
     />
 
@@ -195,127 +195,44 @@
             </ul>
           </div>
 
-          <!-- Maqueta interactiva -->
+          <!-- Mascota del estudio -->
           <div class="hero__visual">
             <div class="stage" id="stage">
-              <!-- Ventana de navegador que se "construye" sola -->
-              <div class="layer layer--window" style="--depth: 14">
-                <div class="window" id="mock" aria-hidden="true">
-                  <div class="window__bar">
-                    <span class="dot"></span><span class="dot"></span
-                    ><span class="dot"></span>
-                    <span class="window__url">tumarca.netlify.app</span>
-                  </div>
-                  <div class="window__body">
-                    <div class="site">
-                      <div class="site__nav b" style="--n: 1">
-                        <span class="site__logo"></span>
-                        <span class="site__links"><i></i><i></i><i></i></span>
-                      </div>
-                      <div class="site__hero">
-                        <div class="site__text">
-                          <i class="line line--lg b" style="--n: 2"></i>
-                          <i class="line line--lg line--s b" style="--n: 3"></i>
-                          <i class="line b" style="--n: 4"></i>
-                          <i class="line line--s b" style="--n: 5"></i>
-                          <span class="site__btn b" style="--n: 6"></span>
-                        </div>
-                        <div class="site__img b" style="--n: 7"></div>
-                      </div>
-                      <div class="site__cards">
-                        <i class="b" style="--n: 8"></i>
-                        <i class="b" style="--n: 9"></i>
-                        <i class="b" style="--n: 10"></i>
-                      </div>
-                    </div>
-                    <svg
-                      class="cursor"
-                      viewBox="0 0 24 24"
-                      width="22"
-                      height="22"
-                    >
-                      <path
-                        d="M5 3l14 8-6 2-2 6z"
-                        fill="#07241a"
-                        stroke="#fff"
-                        stroke-width="1.5"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                  </div>
+              <div class="layer" style="--depth: 8" aria-hidden="true">
+                <span class="arch"></span>
+              </div>
+
+              <div class="layer" style="--depth: 18">
+                <div class="cat-box" id="catBox">
+                  <img class="mascot" id="mascot" src="img/cat.png" alt="Mascota de Kozei STUDIO" />
                 </div>
               </div>
 
-              <!-- Paleta: cambia el color de la marca -->
-              <div class="layer layer--palette" style="--depth: 34">
-                <div class="chip chip--float-a">
-                  <p class="chip__label">Identidad visual</p>
-                  <div
-                    class="swatches"
-                    role="group"
-                    aria-label="Elegir color de marca"
-                  >
-                    <button
-                      class="swatch is-active"
-                      type="button"
-                      style="--c: #22c58b"
-                      data-brand="#22c58b"
-                      data-brand-2="#b9f3d4"
-                      aria-label="Verde"
-                      aria-pressed="true"
-                    ></button>
-                    <button
-                      class="swatch"
-                      type="button"
-                      style="--c: #4f8cff"
-                      data-brand="#4f8cff"
-                      data-brand-2="#cfe0ff"
-                      aria-label="Azul"
-                      aria-pressed="false"
-                    ></button>
-                    <button
-                      class="swatch"
-                      type="button"
-                      style="--c: #ff5c8a"
-                      data-brand="#ff5c8a"
-                      data-brand-2="#ffd3e0"
-                      aria-label="Rosa"
-                      aria-pressed="false"
-                    ></button>
-                    <button
-                      class="swatch"
-                      type="button"
-                      style="--c: #f5b83d"
-                      data-brand="#f5b83d"
-                      data-brand-2="#fde9b8"
-                      aria-label="Ámbar"
-                      aria-pressed="false"
-                    ></button>
+              <div class="layer" style="--depth: 34">
+                <button class="bubble is-pop" id="bubble" type="button" aria-live="polite" aria-label="Cambiar el mensaje de la mascota">
+                  <span id="bubbleText">¡Miau! ¿Qué creamos hoy?</span>
+                </button>
+                <span class="sticker sticker--a" aria-hidden="true"><span class="icon" data-icon="pen"></span>Diseño gráfico</span>
+                <span class="sticker sticker--b" aria-hidden="true"><span class="icon" data-icon="code"></span>Desarrollo web</span>
+                <span class="sticker sticker--c" aria-hidden="true"><span class="icon" data-icon="book"></span>Cursos online</span>
+              </div>
+
+              <div class="layer" style="--depth: 46">
+                <a class="seal" href="#servicios" aria-label="Ver servicios">
+                  <svg class="seal__ring" viewBox="0 0 120 120" aria-hidden="true">
+                    <defs><path id="sealPath" d="M60 60 m-44 0 a44 44 0 1 1 88 0 a44 44 0 1 1 -88 0"/></defs>
+                    <text><textPath href="#sealPath">Diseño · Web · Cursos · Marca ·</textPath></text>
+                  </svg>
+                  <span class="seal__core" data-icon="arrow"></span>
+                </a>
+                <div class="palette">
+                  <span class="palette__label">Color de marca</span>
+                  <div class="swatches" role="group" aria-label="Elegir color de marca">
+                    <button class="swatch is-active" type="button" style="--c: #22c58b" data-brand="#22c58b" data-brand-2="#b9f3d4" aria-label="Verde" aria-pressed="true"></button>
+                    <button class="swatch" type="button" style="--c: #4f8cff" data-brand="#4f8cff" data-brand-2="#cfe0ff" aria-label="Azul" aria-pressed="false"></button>
+                    <button class="swatch" type="button" style="--c: #ff5c8a" data-brand="#ff5c8a" data-brand-2="#ffd3e0" aria-label="Rosa" aria-pressed="false"></button>
+                    <button class="swatch" type="button" style="--c: #f5b83d" data-brand="#f5b83d" data-brand-2="#fde9b8" aria-label="Ámbar" aria-pressed="false"></button>
                   </div>
-                </div>
-              </div>
-
-              <!-- Tipografía -->
-              <div
-                class="layer layer--type"
-                style="--depth: 46"
-                aria-hidden="true"
-              >
-                <div class="chip chip--float-b">
-                  <p class="chip__label">Tipografía</p>
-                  <p class="chip__aa">Aa</p>
-                </div>
-              </div>
-
-              <!-- Código que se escribe -->
-              <div
-                class="layer layer--code"
-                style="--depth: 26"
-                aria-hidden="true"
-              >
-                <div class="chip chip--float-c">
-                  <p class="chip__label">Código</p>
-                  <pre class="code" id="code"></pre>
                 </div>
               </div>
             </div>

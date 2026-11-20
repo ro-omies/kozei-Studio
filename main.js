@@ -7,7 +7,7 @@
    4. Aparición al hacer scroll
    5. Encabezado, menú móvil, progreso y navegación activa
    6. Texto con opacidad ligada al scroll
-   7. Hero: parallax, maqueta, paleta y código
+   7. Hero: parallax, mascota y paleta
    8. Efectos de tarjetas y botones
    9. Enlaces de WhatsApp
    10. Inscripción a cursos (inscripcion.html)
@@ -255,13 +255,12 @@
   updateScrollText();
   updateSteps();
 
-  /* ---------- 7. Hero: parallax, maqueta, paleta y código ---------- */
+  /* ---------- 7. Hero: parallax, mascota y paleta ---------- */
   const hero = $(".hero");
   const stage = $("#stage");
-  const mock = $("#mock");
 
   // La maqueta del hero solo existe en index.html
-  if (hero && stage && mock) {
+  if (hero && stage) {
   // 7.1 Parallax y foco de luz que siguen al cursor
   if (CONFIG.canHover && !CONFIG.reducedMotion) {
     hero.addEventListener("pointermove", (e) => {
@@ -279,25 +278,53 @@
     });
   }
 
-  // 7.2 La maqueta se construye sola y se repite en ciclo
-  function buildCycle() {
-    mock.classList.add("is-built");
-    setTimeout(() => mock.classList.remove("is-built"), 7600);
+  // 7.2 Mascota: si img/cat.png no carga, se muestra la "K" de respaldo
+  const mascot = $("#mascot");
+  const catBox = $("#catBox");
+  if (mascot) {
+    const fallback = () => {
+      const box = document.createElement("div");
+      box.className = "mascot-fallback";
+      box.innerHTML = ICONS.logo;
+      mascot.replaceWith(box);
+    };
+    if (mascot.complete && mascot.naturalWidth === 0) fallback();
+    else mascot.addEventListener("error", fallback, { once: true });
   }
 
-  if (CONFIG.reducedMotion) {
-    mock.classList.add("is-built");
-  } else {
-    setTimeout(buildCycle, 700);
-    setInterval(buildCycle, 9000);
-  }
+  // 7.3 Globo de diálogo: cambia de mensaje (al tocarlo o tocando a la mascota)
+  const bubble = $("#bubble");
+  const bubbleText = $("#bubbleText");
+  const MESSAGES = [
+    "¡Miau! ¿Qué creamos hoy?",
+    "Yo cuido tu marca.",
+    "Tu web, lista para el celular.",
+    "¿Y si lo haces tú? Mira los cursos.",
+    "Escríbenos por WhatsApp.",
+  ];
+  let msg = 0;
 
-  // 7.3 Paleta: cambia el color de marca de la maqueta
+  function nextMessage() {
+    msg = (msg + 1) % MESSAGES.length;
+    bubbleText.textContent = MESSAGES[msg];
+    bubble.classList.remove("is-pop");
+    void bubble.offsetWidth; // reinicia la animación
+    bubble.classList.add("is-pop");
+    if (catBox && !CONFIG.reducedMotion) {
+      catBox.classList.remove("is-hop");
+      void catBox.offsetWidth;
+      catBox.classList.add("is-hop");
+    }
+  }
+  if (bubble) bubble.addEventListener("click", nextMessage);
+  if (catBox) catBox.addEventListener("click", nextMessage);
+
+  // 7.4 Paleta: cambia el color del arco detrás de la mascota
   const swatches = $$(".swatch");
   swatches.forEach((btn) => {
     btn.addEventListener("click", () => {
-      mock.style.setProperty("--brand", btn.dataset.brand);
-      mock.style.setProperty("--brand-2", btn.dataset.brand2);
+      stage.style.setProperty("--brand", btn.dataset.brand);
+      stage.style.setProperty("--brand-2", btn.dataset.brand2);
       swatches.forEach((s) => {
         const active = s === btn;
         s.classList.toggle("is-active", active);
@@ -305,55 +332,6 @@
       });
     });
   });
-
-  // 7.4 Código que se escribe letra a letra
-  const codeEl = $("#code");
-  const CODE_LINES = [
-    "<h1>Mi marca</h1>",
-    "<p>Hola, mundo</p>",
-    '<a href="#">Contacto</a>',
-  ];
-
-  // Convierte una línea en trozos [{ text, tag }] para colorear las etiquetas HTML
-  const tokenize = (line) =>
-    line.split(/(<[^>]+>)/).filter(Boolean).map((text) => ({ text, tag: text.startsWith("<") }));
-
-  function renderCode(count) {
-    // Muestra los primeros "count" caracteres del bloque completo
-    let remaining = count;
-    codeEl.textContent = "";
-    CODE_LINES.forEach((line, i) => {
-      if (remaining <= 0) return;
-      tokenize(line).forEach(({ text, tag }) => {
-        if (remaining <= 0) return;
-        const piece = text.slice(0, remaining);
-        remaining -= piece.length;
-        const span = document.createElement("span");
-        if (tag) span.className = "tok-tag";
-        span.textContent = piece;
-        codeEl.appendChild(span);
-      });
-      if (remaining > 0 && i < CODE_LINES.length - 1) {
-        codeEl.appendChild(document.createTextNode("\n"));
-        remaining -= 1;
-      }
-    });
-  }
-
-  const totalChars = CODE_LINES.join("\n").length;
-
-  if (CONFIG.reducedMotion) {
-    renderCode(totalChars);
-  } else {
-    let n = 0;
-    let pause = 0;
-    setInterval(() => {
-      if (pause > 0) { pause -= 1; return; }
-      n += 1;
-      renderCode(n);
-      if (n >= totalChars) { pause = 28; n = -8; } // espera y vuelve a empezar
-    }, 70);
-  }
 
   }
 
