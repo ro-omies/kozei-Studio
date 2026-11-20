@@ -880,6 +880,11 @@ ul { list-style: none; }
 .enroll .ticks { margin-bottom: 0; }
 .enroll__closed { max-width: 640px; }
 .enroll__closed .card__text { margin-bottom: 1.5rem; }
+.course-doc { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; margin-top: 1.75rem; padding: 1rem 1.1rem; border: 1px dashed var(--emerald); border-radius: 16px; background: rgba(255, 255, 255, 0.03); }
+.course-doc[hidden] { display: none; }
+.course-doc__text { display: grid; gap: 0.15rem; flex: 1 1 220px; }
+.course-doc__text strong { font-weight: 600; }
+.course-doc__text span { font-size: 0.9rem; color: var(--fg-muted); }
 .enroll__actions { display: flex; flex-wrap: wrap; gap: 0.75rem; }
 
 /* Forma de pago */

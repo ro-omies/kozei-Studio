@@ -443,6 +443,11 @@
       duration: "1 semana",
       finish: { label: "Al terminar", value: "Certificado", icon: "award" },
       price: "2,000 CUP",
+      // PDF con el detalle del contenido. Cambia el nombre si tu archivo se llama distinto.
+      pdf: {
+        url: "documents/Diseno-grafico-para-emprendedores.pdf",
+        label: "Descargar contenido detallado (PDF)",
+      },
       topics: [
         "Qué es la identidad visual",
         "Logotipo y versiones",
@@ -507,6 +512,16 @@
         .map(([icon, label, value]) => `<li>${ico(icon)}<div><small>${label}</small><strong>${value}</strong></div></li>`)
         .join("");
       $("#courseTopics").innerHTML = course.topics.map((t) => `<li>${ico("check")}${t}</li>`).join("");
+
+      // Documento PDF con más detalles (solo si el curso tiene uno)
+      const docBox = $("#courseDoc");
+      if (course.pdf && docBox) {
+        const link = $("#courseDocLink");
+        link.href = encodeURI(course.pdf.url);
+        link.setAttribute("download", course.pdf.url.split("/").pop());
+        $("#courseDocLabel").textContent = course.pdf.label || "Descargar PDF";
+        docBox.hidden = false;
+      }
 
       // Pago por Transfermóvil
       $("#payAmount").textContent = course.price;
